@@ -24,17 +24,17 @@ main:
 #  - title: "Notes"
 #    url: /notes/
     
-  - title: "Blog"
-    url: /posts/
+  # - title: "Blog"
+  #   url: /posts/
  
-  - title: "Art"
-    url: /art/
+  # - title: "Art"
+  #   url: /art/
     
   - title: "CV"
-    url: http://mbernste.github.io/files/CV.pdf
+    url: http://kochsebastian.github.io/files/CV.pdf
     
-  - title: "Quotes"
-    url: /quotes/
+  # - title: "Quotes"
+  #   url: /quotes/
    
 #  - title: "Guide"
 #    url: /markdown/
