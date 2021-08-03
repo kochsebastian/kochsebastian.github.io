@@ -3,48 +3,6 @@ title: "Software"
 permalink: /software/
 author_profile: true
 ---
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit fringilla arcu pulvinar tempus. Praesent in imperdiet eros. Mauris gravida ultrices est. Nam volutpat diam laoreet ipsum suscipit condimentum. Morbi urna orci, commodo at egestas quis, bibendum eu est. Nunc vulputate risus ac eleifend cursus. Donec eget scelerisque urna. Nam nec vulputate massa. Donec ultricies sed arcu a sodales. Proin a placerat erat. Ut sollicitudin ipsum quis eros convallis imperdiet. Etiam ut gravida sem. Fusce commodo sagittis urna, vitae euismod justo malesuada id. Duis dignissim mauris metus, porttitor imperdiet arcu rutrum vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse consequat finibus quam in posuere.
 
-Here are some of the software products to come out of my research:
-
-### MetaSRA Website
-
-Search for public RNA-seq data within the Sequence Read Archive using biomedical ontologies.
-
-* Website: [http://metasra.biostat.wisc.edu](http://metasra.biostat.wisc.edu)
-* GitHub: 
-  * [https://github.com/deweylab/MetaSRA-website-frontend](https://github.com/deweylab/MetaSRA-website-frontend)
-  * [https://github.com/deweylab/MetaSRA-API-backend](https://github.com/deweylab/MetaSRA-API-backend)
- 
-### MetaSRA Pipeline
-
-Standardize biomedical metadata that are encoded as key-value pairs.
-
-* GitHub: [https://github.com/deweylab/MetaSRA-pipeline](https://github.com/deweylab/MetaSRA-pipeline)
-
-
-### CellO
-
-Cell type classification of single-cell RNA-seq data against the Cell Ontology.
-
-* GitHub: [https://github.com/deweylab/CellO](https://github.com/deweylab/CellO)
-
-### CellO Viewer
-
-Explore cell type-specific gene expression signatures across the Cell Ontology.
-
-* Website: [https://uwgraphics.github.io/CellOViewer/](https://uwgraphics.github.io/CellOViewer/)
-* GitHub: [https://github.com/uwgraphics/CellOViewer](https://github.com/uwgraphics/CellOViewer)
-
-### CHARTS
-
-Characterize and compare tumor subpopulations across public single-cell RNA-seq data.
-
-* Website: [https://charts.morgridge.org](https://charts.morgridge.org)
-* GitHub: [https://github.com/stewart-lab/CHARTS](https://github.com/stewart-lab/CHARTS)
-
-### Series Finder & Case-Control Finder
-
-Build structured datasets of RNA-seq data from the Sequence Read Archive.
-
-* GitHub: [https://github.com/mbernste/hypothesis-driven-SRA-queries](https://github.com/mbernste/hypothesis-driven-SRA-queries)
-
+Vivamus mi turpis, sodales ac imperdiet eget, luctus ultricies lacus. Aenean iaculis felis sed lorem vehicula placerat. Quisque feugiat turpis et justo convallis, id vehicula magna ornare. In nec feugiat dui. Cras gravida purus vel enim congue, id auctor tortor tincidunt. Maecenas varius metus tristique diam tempus, non porta justo vestibulum. Nullam suscipit leo sit amet massa aliquet, nec feugiat metus imperdiet. Morbi eleifend imperdiet egestas. Vivamus efficitur mi a erat ullamcorper, vitae pellentesque tortor elementum. Aliquam lacus lorem, congue ut iaculis fringilla, eleifend eu felis.
