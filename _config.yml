@@ -6,14 +6,14 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Matthew N. Bernstein"
+locale                   : "de"
+title                    : "Sebastian Koch"
 title_separator          : "-"
-name                     : &name "Matthew Bernstein"
+name                     : &name "Sebastian Koch"
 description              : &description "Personal website"
-url                      : https://mbernste.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://kochsebastian.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "mbernste/mbernste.github.io"
+repository               : "kochsebastian/kochsebastian.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -78,13 +78,13 @@ analytics:
 
 # Site Author
 author:
-  name             : "Matthew N. Bernstein"
+  name             : "Sebastian Koch"
   avatar           : "profile.png"
-  bio              : "Postdoctoral Fellow at the Morgridge Institute for Research."
-  location         : "Madison, WI"
+  bio              : "Masters Student Computer Science University of Tübingen"
+  location         : "Tübingen, Germany"
   employer         :
-  googlescholar    : "https://scholar.google.com/citations?user=lPAcXb0AAAAJ&hl=en"
-  email            :
+  googlescholar    : 
+  email            : "koch.sebastian@mail.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -92,22 +92,22 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "mbernste"
+  github           : "https://github.com/kochsebastian"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "matthew-bernstein-1a184070"
-  orcid            : #"http://orcid.org/yourorcidurl"
+  linkedin         : "https://www.linkedin.com/in/sebastian-koch-9ba94316a/"
+  orcid            :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : #"replacethistwitterhandle"
+  twitter          : 
   vine             :
   weibo            :
-  xing             :
+  xing             : "https://www.xing.com/profile/Sebastian_Koch311/"
   youtube          :
   wikipedia        :
 
