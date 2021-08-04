@@ -1,6 +1,6 @@
 ---
-title: "Software"
-permalink: /software/
+title: "Projects"
+permalink: /projects/
 author_profile: true
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit fringilla arcu pulvinar tempus. Praesent in imperdiet eros. Mauris gravida ultrices est. Nam volutpat diam laoreet ipsum suscipit condimentum. Morbi urna orci, commodo at egestas quis, bibendum eu est. Nunc vulputate risus ac eleifend cursus. Donec eget scelerisque urna. Nam nec vulputate massa. Donec ultricies sed arcu a sodales. Proin a placerat erat. Ut sollicitudin ipsum quis eros convallis imperdiet. Etiam ut gravida sem. Fusce commodo sagittis urna, vitae euismod justo malesuada id. Duis dignissim mauris metus, porttitor imperdiet arcu rutrum vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse consequat finibus quam in posuere.
