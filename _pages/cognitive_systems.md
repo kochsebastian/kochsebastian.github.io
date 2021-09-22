@@ -7,14 +7,14 @@ author_profile: true
 ## Labeling Support
 In the beginning, I supported the labeling process of the newly acquired dataset of swimmers and boats on a lake recorded by a drone. The goal was to get object labels that can be used to train and test object detectors and trackers. For the labeling I choose [DarkLabel](https://github.com/darkpgmr/DarkLabel) which was in my experience the best publically available too to quickly label videos. Unlike other similar labeling tools, DarkLabel uses an object tracker to track objects over time and save manual labeling time. However, tracking swimmers was difficult because they drastically change their shape while swimming. Therefore most swimmers had to be labeled by hand for each frame.
 <p align="center">
-[DarkLabel](https://github.com/darkpgmr/DarkLabel/)
+DarkLabel
 <img src="../images/darklabel.png " width="600"/>
 </p>
 ## Labeling Tooling
 Video Labeling for Object Detection is a lot of work and automation of this process is difficult and therefore barely explored. The previously used labeling tool was accelerating the labeling process but most swimmers had to be labeled by hand because their movement was too severe to be accurately followed by the tracker.
 To improve labeling speed a new labeling tool was needed. But no better labeling tool was available that suited all the requirements. Therefore I build a new labeling tool from the ground up. 
 <p align="center">
-[AutoLabeling](https://github.com/kochsebastian/AutoLabeling/)
+AutoLabeling
 <img src="../images/autolabeling.png " width="600"/>
 </p>
 The labeling tool is an easy to use Python-Application. It offers an intuitive labeling process with bounding box drawing, zooming and resizing. The labeling tool also supports object tracking for faster video labeling. But in contrast to the previous labeling tool, my labeling tool support SOTA neural networks-based object tracker. Furthermore, the tracking module is modular so the tracker can be swapped by new SOTA trackers in the future. Additionally, the labeling tool supports the integration and use of an object detector for automatic labeling. This way in later stages of the labeling process an object detector can already be trained on the labeled data to further accelerate the final labeling process.
@@ -31,31 +31,32 @@ With this tool, the labeling process can be accelerated by a factor of 5-10.
 
 Object Detection is already difficult to run on embedded devices. Often the resolution is very low to enable real-time performance. Some applications, however need high-resolution images because objects are small, objects are far away or the camera has to monitor a large field of view. When combined with real-time constraints high-resolution object detection becomes almost infeasible. Luckily it's not always necessary to do everything on device. Often it's sufficient to do preprocessing on the embedded device and the real object detection can be done remotely. Drones are an excellent example of this. A drone just cannot carry a large GPU for object detection but a downlink to a remote server is easily fitted to the drone.
 To identify relevant areas in an image without large networks many approaches have been developed like Object Detection with small networks, Anomaly Detection, Attention, or ROI selection with Reinforcement Learning. These approaches however either do not deliver enough precision or are too expensive to run on an embedded device with high-resolution images.
- Therefore  I looked into other less common methods. Saliency Maps are a visualization technique for image classifier to identify which regions are most interesting for are classifer to classifer an image as a certain class.
+ Therefore I looked into other less common methods. Saliency Maps are a visualization technique for image classifiers to identify which regions are most relevant for the classifier to classify an image as a certain class. For this the gradient of the later layers combined with the activations of the later layers and outputs are used.
+ The big advantage is that this works more or less without training the network for a specific task. Networks pretrained on ImageNet are very able to find relevant objects in the images even if the relevant objects aren't in the ImageNet dataset.
 <p align="center">
 Salient regions in an image captured by a drone
 <img src="../images/saliency.png " width="600"/>
 </p>
+Training the checkpoints actually introduces more error for this task. Therefore I trained only the last output layer to get even better localization results. A drawback of this method is that it purely localizes objects in an image but unlike an object detector it doesn't classify them.
 
 
 
 ## Efficient Object Detection on embedded hardware
-Most object detection systems are designed with the assumption of having next to unlimed computing power. This of course is not the reality for real application. Most applications must run on embedded devices with limited power and compute. To bridge the gap between the embedded level and the GPU world Nvidia has developed the [Jetson AGX Xavier](https://developer.nvidia.com/embedded/jetson-agx-xavier-developer-kit) a small all-in-one GPU device with Tensor Cores and DL Accelerators. In combination with [TensorRT](https://developer.nvidia.com/tensorrt)  powerful object detection models can be optimized to run at the embedded level.
-For simple models this is a very easy process. But complex models sometimes have every rare operations which are not natively supported by TensorRT. I worked on 
-<p align="center">
-FPS vs mAP TensorRT
-<img src="/home/skoch/Downloads/20210921_102514.jpg " width="600"/>
-</p>
+Most object detection systems are designed with the assumption of having next to unlimed computing power. This of course is not the reality for real application. Most applications must run on embedded devices with limited power and compute. To bridge the gap between the embedded level and the GPU world Nvidia has developed the [Jetson AGX Xavier](https://developer.nvidia.com/embedded/jetson-agx-xavier-developer-kit) a small all-in-one GPU device with Tensor Cores and DL Accelerators. In combination with [TensorRT](https://developer.nvidia.com/tensorrt)  powerful object detection models can be optimized to run at the embedded level. TensorRT yields about a 4-5 times speed up to the native PyTorch implementation on a Jetson device. When using fixed precision with FP16 or INT8 an speed up of 8 to 10 is possible without losing much accuracy.
+For simple models this is a very easy process. But complex models sometimes have every rare operation which is not natively supported by TensorRT. Conversion is thus not easy. For many layers, it is necessary to find supported operations or to write CUDA Kernels that can directly be used by TensorRT. An architecture where this is especially challenging is the Saliency Detection which uses the gradient to find the most salient regions. Backpropagation is however not supported in TensorRT unlike in PyTorch. Therefore I had to define the backward pass manually. For this rather than implementing everything in TensorRT I used PyTorch to define the gradient calculation with TensorRT compatible functions.
+
 
 ## Building ARM Prototype for Drone
 The goal of the research is to apply to a real project. Here we equipped a DJI Matric 100 with a Jetson AGX Xavier board to detect swimmer from the drone. I mostly provided the detection software and supported the Python-Integration of the camera software. The detection software builds upon the previous work of Saliency Detection and TensorRT optimization. It runs in real-time on the drone.
 ## Importance of Camera & Image Parameters
-
-Parameters:
-* Color Space
-* Lens Distortion
-* Bit Depth
-* File Compression
-* Gamma Correction
-* Image Size
-*  Multi-Specral Information
+In another research project, I want to find out with the collaboration of Leon Varga what camera and image parameters are relevant for training and inference of an object detector.
+Interesting parameters are the following:
+| Parameter      | Standard |  Other Config | Research Question     |
+| :---        |    :----:    |    :----:   |          ---: |
+| Color Space      | RGB | YCrCb, HSV, ... | Do the color space matter for the neural network?   |
+| Bit Depth     | 8 Bit | 4 Bit, 2 Bit | Can the neural network achieve similar accuracy with lower bit depth?   |
+| Compression     | None | JPEG | Can the neural network achieve similar accuracy with drastically lower image information?   |
+| Image Size     | ~512 | smaller, larger | Does image size matter during training, or testing?  |
+| Lens Distortion     | corrected | Barrel, Pincushion  | Is the neural network able to learn the distortion and ignore it? / Is extensive calibration necessary? |
+| Gamma Correction | None | lower/higher gamma, dynamic gamma | Does the neural network |
+| Multi-Spectral Information | None | Thermal, Infrared | Does additional color information help with detection accuracy? |
