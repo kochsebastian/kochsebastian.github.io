@@ -1,10 +1,8 @@
 ---
-title: "My Time at Cognitive Systems Lab"
+title: "My Time at Cognitive Systems Lab (Prof Zell)"
 permalink: /cognitive_systems/
 author_profile: true
 ---
-
-# My time at Cognitive Systems Lab (Prof Zell)
 
 ## Labeling Support
 In the beginning, I supported the labeling process of the newly acquired dataset of swimmers and boats on a lake recorded by a drone. The goal was to get object labels that can be used to train and test object detectors and trackers. For the labeling I choose [DarkLabel](https://github.com/darkpgmr/DarkLabel) which was in my experience the best publically available too to quickly label videos. Unlike other similar labeling tools, DarkLabel uses an object tracker to track objects over time and save manual labeling time. However, tracking swimmers was difficult because they drastically change their shape while swimming. Therefore most swimmers had to be labeled by hand for each frame.
