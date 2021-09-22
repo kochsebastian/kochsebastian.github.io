@@ -26,27 +26,20 @@ author_profile: true
 
 .tab { margin-left: 40px; }
 
-li {
-  margin-left: 10px;
-}
-ul li{ 
-  margin-left: 60px;
-}
+
 
 </style>
 
 
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac. Augue ut lectus arcu bibendum at varius vel pharetra vel. Massa eget egestas purus viverra accumsan in nisl. Vulputate mi sit amet mauris commodo quis imperdiet massa. In est ante in nibh mauris cursus. Duis at consectetur lorem donec massa sapien faucibus. Consectetur a erat nam at lectus. Risus ultricies tristique nulla aliquet enim tortor at. Euismod in pellentesque massa placerat duis ultricies lacus sed. Sed id semper risus in hendrerit. Ut porttitor leo a diam sollicitudin tempor id. Nisl nisi scelerisque eu ultrices vitae auctor. Ipsum dolor sit amet consectetur adipiscing. Nisl vel pretium lectus quam. Enim lobortis scelerisque fermentum dui faucibus. Placerat duis ultricies lacus sed turpis tincidunt. Arcu non sodales neque sodales. Eget mauris pharetra et ultrices neque ornare aenean euismod.
 
 <div class="row">
   <div class="column" >
     <h2><center>Hocky RL</center></h2>
     <center><a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"></a>
         </center>
-    <ul>
-  <li>RL-Agent based on SoftActorCritic </li>
-  <li>3rd Place in competition</li>
-</ul>  
+
     
 
   </div>
@@ -55,23 +48,19 @@ ul li{
    <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px"></a>
 
     </center>
-        <ul>
-  <li>MiniMax</li>
-  <li>1st Place in competition</li>
-</ul>  
+
   </div>
   <div class="column" >
     <h2><center>Chess Vision Bot</center></h2>
     <center><a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="400" height="250" style="padding-left: 10px; padding-right: 20px padding-top: 10px padding-bottom: 10px" ></a>
-    <br>
-    jfk
+
     </center>
   </div>
   <div class="column">
     <h2><center>Learning Steering Behavior</center></h2>
    <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="300" height="250" style="padding-left: 25px; padding-right: 25px"></a>
-   <br>
-    jfk
+
    </center>
   </div>
 </div>
+Placerat in egestas erat imperdiet sed euismod. Fermentum leo vel orci porta non pulvinar. Quis enim lobortis scelerisque fermentum dui faucibus in. Mi quis hendrerit dolor magna eget est lorem. Ornare suspendisse sed nisi lacus. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Felis bibendum ut tristique et egestas. In hendrerit gravida rutrum quisque non tellus orci ac. Pharetra vel turpis nunc eget lorem. Amet dictum sit amet justo donec enim diam vulputate. Vulputate mi sit amet mauris commodo. Vestibulum lectus mauris ultrices eros in cursus turpis.
