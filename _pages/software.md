@@ -31,18 +31,33 @@ author_profile: true
 <div class="row">
   <div class="column" >
     <h2><center>Hocky RL</center></h2>
-    <a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"></a>
+    <center><a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"></a>
+    
+    <br>
+    * RL-Agent based on SoftActorCritic
+    * 3rd place 
+    
+    </center>
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
-   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px"></a>
+   <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px"></a>
+   <br>
+    jfk
+    </center>
   </div>
   <div class="column" >
     <h2><center>Chess Vision Bot</center></h2>
-    <a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="400" height="250" style="padding-left: 10px; padding-right: 20px"></a>
+    <center><a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="400" height="250" style="padding-left: 10px; padding-right: 20px"></a>
+    <br>
+    jfk
+    </center>
   </div>
   <div class="column">
     <h2><center>Learning Steering Behavior</center></h2>
-   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="250" height="250" style="padding-left: 25px; padding-right: 25px"></a>
+   <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="300" height="250" style="padding-left: 25px; padding-right: 25px"></a>
+   <br>
+    jfk
+   </center>
   </div>
 </div>
