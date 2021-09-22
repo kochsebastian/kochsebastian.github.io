@@ -35,7 +35,7 @@ author_profile: true
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
-   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px""></a>
+   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px"></a>
   </div>
   <div class="column" >
     <h2><center>Chess Vision Bot</center></h2>
@@ -43,6 +43,6 @@ author_profile: true
   </div>
   <div class="column">
     <h2><center>Learning Steering Behavior</center></h2>
-   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="250" height="250" style="padding-left: 25px; padding-right: 25px""></a>
+   <a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="250" height="250" style="padding-left: 25px; padding-right: 25px"></a>
   </div>
 </div>
