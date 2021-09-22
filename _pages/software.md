@@ -44,7 +44,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="row">
   <div class="column" >
     <h2><center>Hocky RL</center></h2>
-    [<img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"/>](https://github.com/kochsebastian/SAC_Hockey) 
+    <a href="default.asp"><img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"></a>
   </div>
   <div class="column">
     <h2>Column 2</h2>
