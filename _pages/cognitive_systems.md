@@ -51,8 +51,9 @@ The goal of the research is to apply to a real project. Here we equipped a DJI M
 ## Importance of Camera & Image Parameters
 In another research project, I want to find out with the collaboration of Leon Varga what camera and image parameters are relevant for training and inference of an object detector.
 Interesting parameters are the following:
+
 | Parameter      | Standard |  Other Config | Research Question     |
-| :---        |    :----:    |    :----:   |          ---: |
+| :---        |    :----:    |    :----:   |          --- |
 | Color Space      | RGB | YCrCb, HSV, ... | Do the color space matter for the neural network?   |
 | Bit Depth     | 8 Bit | 4 Bit, 2 Bit | Can the neural network achieve similar accuracy with lower bit depth?   |
 | Compression     | None | JPEG | Can the neural network achieve similar accuracy with drastically lower image information?   |
