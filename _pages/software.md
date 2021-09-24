@@ -29,42 +29,57 @@ author_profile: true
 
 </style>
 
+Here you can find a presentation of some of my projects.
 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue eu consequat ac. Augue ut lectus arcu bibendum at varius vel pharetra vel. Massa eget egestas purus viverra accumsan in nisl. Vulputate mi sit amet mauris commodo quis imperdiet massa. In est ante in nibh mauris cursus. Duis at consectetur lorem donec massa sapien faucibus. Consectetur a erat nam at lectus. Risus ultricies tristique nulla aliquet enim tortor at. Euismod in pellentesque massa placerat duis ultricies lacus sed. Sed id semper risus in hendrerit. Ut porttitor leo a diam sollicitudin tempor id. Nisl nisi scelerisque eu ultrices vitae auctor. Ipsum dolor sit amet consectetur adipiscing. Nisl vel pretium lectus quam. Enim lobortis scelerisque fermentum dui faucibus. Placerat duis ultricies lacus sed turpis tincidunt. Arcu non sodales neque sodales. Eget mauris pharetra et ultrices neque ornare aenean euismod.
 
 <div class="row">
   <div class="column" >
     <h2><center>Hocky RL</center></h2>
     	<center>
-    		<a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="95%" height="95%"></a>
+    		<a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="100%" height="270"></a>
         </center>
         <ul>
         <li> 3rd place of the yearly RL Hockey Cempetition conducted by the MPI Autonomous Learning group of Dr. Georg Martius </li>
+        <li> Agent based on SoftActorCritic with some improvements</li>
         </ul>  
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
    	<center>
-   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="59%" height="59%"></a>
+   		<a href="https://github.com/kochsebastian/Diana-ChessEngine"><img src="../images/diana_chess.png "  width="60%" height="270"></a>
+   		
     </center>
     <ul>
         <li> 1st place of the yearly AI Chess Competition conducted by the Cognitive Systems Lab of Professor Zell</li>
-        </ul>  
+        <li>MiniMax-Style Agent with many improvements like optimized alpha-beta pruning, learned evaluation function and many more</li>
+    </ul> 
   </div>
 </div>
 <div class="row">
   <div class="column" >
     <h2><center>Chess Vision Bot</center></h2>
     	<center>
-    		<a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="95%" height="95%" ></a>
+    		<a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="100%" height="220" ></a>
     	</center>
+    	<ul>
+        <li> Agent using computer vision and machine learningto play chess on popular chess websites in unknown positions</li>
+    </ul> 
   </div>
   <div class="column">
     <h2><center>Learning Steering </center></h2>
    	<center>
-   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="62%" height="62%" ></a>
+   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="62%" height="220" ></a>
    	</center>
+   	<br>
+   	 <li> Agents learning simple steering bahavior with reinforcement learning  and generative algortihms</li>
   </div>
 </div>
-Placerat in egestas erat imperdiet sed euismod. Fermentum leo vel orci porta non pulvinar. Quis enim lobortis scelerisque fermentum dui faucibus in. Mi quis hendrerit dolor magna eget est lorem. Ornare suspendisse sed nisi lacus. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Felis bibendum ut tristique et egestas. In hendrerit gravida rutrum quisque non tellus orci ac. Pharetra vel turpis nunc eget lorem. Amet dictum sit amet justo donec enim diam vulputate. Vulputate mi sit amet mauris commodo. Vestibulum lectus mauris ultrices eros in cursus turpis.
+
+Some of my other projects:
+
+* AutoLabeling (A labeling tool for images and videos)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AutoLabeling](https://github.com/kochsebastian/AutoLabeling)
+* VO-SLAM (ongoing project to implement a SLAM-System with visual-odometry)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/VO-SLAM](https://github.com/kochsebastian/VO-SLAM)
+* AnimalDetectionDrone (University project: Building a Drone-System to detection wild animals in a field with a thermal-camera)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AnimalDetectionDrone](https://github.com/kochsebastian/AnimalDetectionDrone)
