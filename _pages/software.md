@@ -39,12 +39,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     	<center>
     		<a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="95%" height="95%"></a>
         </center>
+        * 3rd place of the yearly RL Hockey Cempetition conducted by the MPI Autonomous Learning group of Dr. Georg Martius
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
    	<center>
    		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="59%" height="59%"></a>
     </center>
+    * 1st place of the yearly AI Chess Competition conducted by the Cognitive Systems Lab of Professor Zell
   </div>
 
   <div class="column" >
