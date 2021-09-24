@@ -14,7 +14,6 @@ author_profile: true
   float: left;
   width: 50%;
   padding: 10px;
-  height: 450px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -37,30 +36,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <div class="row">
   <div class="column" >
     <h2><center>Hocky RL</center></h2>
-    <center><a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="400" height="300" style="padding-left: 10px; padding-right: 20px"></a>
+    	<center>
+    		<a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="95%" height="95%"></a>
         </center>
-
-    
-
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
-   <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="250" height="300" style="padding-left: 25px; padding-right: 25px"></a>
-
+   	<center>
+   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/diana_chess.png "  width="59%" height="59%"></a>
     </center>
-
   </div>
+
   <div class="column" >
     <h2><center>Chess Vision Bot</center></h2>
-    <center><a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="400" height="250" style="padding-left: 10px; padding-right: 20px padding-top: 10px padding-bottom: 10px" ></a>
-
-    </center>
+    	<center>
+    		<a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="95%" height="95%" ></a>
+    	</center>
   </div>
   <div class="column">
-    <h2><center>Learning Steering Behavior</center></h2>
-   <center><a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="300" height="250" style="padding-left: 25px; padding-right: 25px"></a>
-
-   </center>
+    <h2><center>Learning Steering </center></h2>
+   	<center>
+   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="62%" height="62%" ></a>
+   	</center>
   </div>
 </div>
 Placerat in egestas erat imperdiet sed euismod. Fermentum leo vel orci porta non pulvinar. Quis enim lobortis scelerisque fermentum dui faucibus in. Mi quis hendrerit dolor magna eget est lorem. Ornare suspendisse sed nisi lacus. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Felis bibendum ut tristique et egestas. In hendrerit gravida rutrum quisque non tellus orci ac. Pharetra vel turpis nunc eget lorem. Amet dictum sit amet justo donec enim diam vulputate. Vulputate mi sit amet mauris commodo. Vestibulum lectus mauris ultrices eros in cursus turpis.
