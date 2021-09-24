@@ -77,9 +77,9 @@ Here you can find a presentation of some of my projects.
 
 Some of my other projects:
 
-* AutoLabeling (A labeling tool for images and videos)
+* AutoLabeling (A labeling tool for images and videos)      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AutoLabeling](https://github.com/kochsebastian/AutoLabeling)
-* VO-SLAM (ongoing project to implement a SLAM-System with visual-odometry)
+* VO-SLAM (ongoing project to implement a SLAM-System with visual-odometry)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/VO-SLAM](https://github.com/kochsebastian/VO-SLAM)
-* AnimalDetectionDrone (University project: Building a Drone-System to detection wild animals in a field with a thermal-camera)
+* AnimalDetectionDrone (University project: Building a Drone-System to detection wild animals in a field with a thermal-camera)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AnimalDetectionDrone](https://github.com/kochsebastian/AnimalDetectionDrone)
