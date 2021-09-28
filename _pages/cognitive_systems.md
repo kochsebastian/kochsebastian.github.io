@@ -51,7 +51,7 @@ My research projects are building towards bringing a system on a drone that can 
  Here we equipped a DJI Matric 100 with a Jetson AGX Xavier board to detect swimmers from the drone. I mostly provided the detection software and supported the Python-Integration of the camera software. The detection software builds upon the previous work of Saliency Detection and TensorRT optimization. It runs in real-time on the drone with a near HD image feed. And can perform on-par in regards to accuracy with other trained object detection networks that have to be retrained for different scenarios while the Saliency Detection is way more general.
  
 ## Importance of Camera & Image Parameters
-In another research project, I want to find out with the collaboration of Leon Varga what camera and image parameters are relevant for training and inference of an object detector.
+In another research project, I want to find out with the collaboration of [Leon Varga](https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/leon-varga/) what camera and image parameters are relevant for training and inference of an object detector.
 Interesting parameters are the following:
 
 | Parameter      | Standard |  Other Config | Research Question     |
