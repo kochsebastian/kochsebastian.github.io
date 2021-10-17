@@ -68,7 +68,7 @@ Here you can find a presentation of some of my projects.
   <div class="column">
     <h2><center>Learning Steering </center></h2>
    	<center>
-   		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="62%" height="220" ></a>
+   		<a href="https://github.com/kochsebastian/Learn_Steering"><img src="../images/steering.png "  width="62%" height="220" ></a>
    	</center>
    	<br>
    	 <li> Agents learning simple steering bahavior with reinforcement learning  and generative algortihms</li>
