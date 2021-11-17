@@ -39,9 +39,9 @@ Here you can find a presentation of some of my projects.
     		<a href="https://github.com/kochsebastian/SAC_Hockey"><img src="../images/hockey_ai.png " width="100%" height="270"></a>
         </center>
         <ul>
-        <li> 3rd place of the yearly RL Hockey Cempetition conducted by the MPI Autonomous Learning group of Dr. Georg Martius </li>
+        <li> 3rd place in the RL Hockey Competition conducted by the MPI-IS Autonomous Learning group of Dr. Georg Martius </li>
         <li> Agent based on SoftActorCritic with some improvements</li>
-        </ul>  
+        </ul>    
   </div>
   <div class="column">
     <h2><center>Diana Chess</center></h2>
@@ -50,8 +50,8 @@ Here you can find a presentation of some of my projects.
    		
     </center>
     <ul>
-        <li> 1st place of the yearly AI Chess Competition conducted by the Cognitive Systems Lab of Professor Zell</li>
-        <li>MiniMax-Style Agent with many improvements like optimized alpha-beta pruning, learned evaluation function and many more</li>
+        <li> 1st place in the AI Chess Competition conducted by the Cognitive Systems Lab of Professor Zell</li>
+        <li>MiniMax-Style Agent with many improvements like optimized alpha-beta pruning, learned evaluation function, etc.</li>
     </ul> 
   </div>
 </div>
@@ -62,7 +62,7 @@ Here you can find a presentation of some of my projects.
     		<a href="https://github.com/kochsebastian/chessvisionbot"><img src="../images/chess_vision.png " width="100%" height="220" ></a>
     	</center>
     	<ul>
-        <li> Agent using computer vision and machine learningto play chess on popular chess websites in unknown positions</li>
+         <li> Agent using computer vision and machine learning to play chess on popular chess websites in unknown positions</li>
     </ul> 
   </div>
   <div class="column">
@@ -71,15 +71,15 @@ Here you can find a presentation of some of my projects.
    		<a href="https://github.com/kochsebastian/dianachess"><img src="../images/steering.png "  width="62%" height="220" ></a>
    	</center>
    	<br>
-   	 <li> Agents learning simple steering bahavior with reinforcement learning  and generative algortihms</li>
+   	 <li> Agents learning simple steering behavior with reinforcement learning and genetic algorithms</li>
   </div>
 </div>
 
 Some of my other projects:
 
-* AutoLabeling (A labeling tool for images and videos)      
+* AutoLabeling (A labeling tool for images and videos, offering powerful auto-labeling methods)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AutoLabeling](https://github.com/kochsebastian/AutoLabeling)
 * VO-SLAM (ongoing project to implement a SLAM-System with visual-odometry)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/VO-SLAM](https://github.com/kochsebastian/VO-SLAM)
-* AnimalDetectionDrone (University project: Building a Drone-System to detection wild animals in a field with a thermal-camera)       
+* AnimalDetectionDrone (University project: Building a drone system to detect wild animals in a field with a thermal-camera)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [https://github.com/kochsebastian/AnimalDetectionDrone](https://github.com/kochsebastian/AnimalDetectionDrone)
