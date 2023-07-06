@@ -83,6 +83,28 @@
     }
     
   </style>
+  <script>
+    function changeImage() {
+      // Get the image element by its ID
+      var img = document.getElementById('myImage');
+
+      // Check the current source of the image
+      var currentSrc = img.src;
+      
+      // Define the source for the new image
+      var newSrc = '';
+
+      // Toggle between the two images based on the current source
+      if (currentSrc === 'media/profile.jpg') {
+        newSrc = 'media/profile_object.jpg';
+      } else {
+        newSrc = 'media/profile.jpg';
+      }
+
+      // Change the source of the image
+      img.src = newSrc;
+    }
+  </script>
   <link rel="icon" type="image/png" href="media/icon.png">
   <title>Sebastian Koch - Homepage</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -124,7 +146,7 @@
         </p>
         </td>
         <td width="33%">
-          <img src="media/profile.jpg" width="250" alt="headshot" class="float-left">
+          <img src="media/profile.jpg" width="250" onclick="changeImage()">
         </td>
       </tr>
       </table>
