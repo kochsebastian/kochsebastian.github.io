@@ -81,9 +81,24 @@
       float: left;
       margin-right: 10px; /* Adjust the margin as needed */
     }
+    .stretch-word {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 200%;
+      vertical-align:bottom;
+      float:left;
+      padding-right:5px;
+    }
+    @media only screen and (max-width: 600px) {
+    /* Hide the table on mobile devices */
+    .desktop-only {
+      display: none;
+    }
+  }
     
   </style>
   <script>
+
     function changeImage() {
       // Get the image element by its ID
       var img = document.getElementById('myImage');
@@ -123,7 +138,7 @@
   <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
     <tr>
     <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" class="desktop-only">
       <!--<tr onmouseout="headshot_stop()" onmouseover="headshot_start()">-->
       <tr>
         <td width="67%" valign="middle">
@@ -133,7 +148,7 @@
           ruthfong at robots dot ox dot ac dot uk-->
         </p>
         <p>
-          <strong>Hi!</strong> I am a PhD student at <a href="https://www.uni-ulm.de/en/">Ulm University</a> and <a href="https://www.bosch-ai.com/">Bosch Research/Bosch Center for Artificial Intelligence</a>. I am supervised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>.
+          <span class="stretch-word">Hi!</span> I am a PhD student at <a href="https://www.uni-ulm.de/en/">Ulm University</a> and <a href="https://www.bosch-ai.com/">Bosch Research/Bosch Center for Artificial Intelligence</a>. I am supervised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>.
         </p>  
         <p>
           My main research interest lies at the intersection of  computer vision, and robotics. The goal of my PhD is to develop 3D scene representations of the real world that are valuable for robots to navigate and solve tasks within their environment.
@@ -154,7 +169,7 @@
         </p>
         </td>
         <td width="33%">
-          <img id="myImage" src="media/profile.jpg" width="250" onclick="changeImage()">
+            <img id="myImage" src="media/profile.jpg" width="250" onclick="changeImage()"> 
         </td>
       </tr>
       </table>
