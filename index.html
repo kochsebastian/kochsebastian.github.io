@@ -90,18 +90,24 @@
 
       // Check the current source of the image
       var currentSrc = img.src;
-      
-      // Define the source for the new image
-      var newSrc = '';
 
-      // Toggle between the two images based on the current source
-      if (currentSrc === 'https://kochsebastian.com/media/profile.jpg') {
-        console.log('changed');
-        newSrc = 'https://kochsebastian.com/media/profile_object.jpeg';
-      } else {
-        newSrc = 'https://kochsebastian.com/media/profile.jpg';
-        console.log('changed back');
-      }
+      var imagePaths = [
+        'https://kochsebastian.com/media/profile.jpg',
+        'https://kochsebastian.com/media/profile_object.jpeg',
+        'https://kochsebastian.com/media/profile_masked.png'
+        // Add more image paths as needed
+      ];
+      
+      // Remove the current image source from the array
+      var filteredPaths = imagePaths.filter(function(path) {
+        return path !== currentSrc;
+      });
+
+      // Generate a random index
+      var randomIndex = Math.floor(Math.random() * filteredPaths.length);
+
+      // Get the next image path based on the random index
+      var nextSrc = filteredPaths[randomIndex];
 
       // Change the source of the image
       img.src = newSrc;
