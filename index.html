@@ -94,6 +94,12 @@
     .desktop-only {
       display: none;
     }
+    @media only screen and (min-width: 601px) {
+    /* Hide the table on devices with a width larger than 600px */
+    .mobile-only {
+      display: none;
+    }
+    }
   }
     
   </style>
@@ -173,6 +179,38 @@
         </td>
       </tr>
       </table>
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" class="mobile-only">
+        <tr>
+          <td width="100%" valign="middle">
+          <p align="center">
+            <name>Sebastian Koch</name>
+      
+          </p>
+          <img id="myImage" src="media/profile.jpg" width="250" onclick="changeImage()"> 
+          <p>
+            <span class="stretch-word">Hi!</span> I am a PhD student at <a href="https://www.uni-ulm.de/en/">Ulm University</a> and <a href="https://www.bosch-ai.com/">Bosch Research/Bosch Center for Artificial Intelligence</a>. I am supervised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>.
+          </p>  
+          <p>
+            My main research interest lies at the intersection of  computer vision, and robotics. The goal of my PhD is to develop 3D scene representations of the real world that are valuable for robots to navigate and solve tasks within their environment.
+          </p>
+          <p>
+            I completed my master's degree in computer science at the <a href="https://uni-tuebingen.de/en">University of Tübingen</a>. In my master's thesis, I investigated multi-view and symmetry-aware 6D pose estimation under the guidance of <a href="https://www.cvlibs.net/">Andreas Geiger</a> and <a href="https://alr.anthropomatik.kit.edu/21_65.php">Gerhard Neumann</a>, in collaboration with <a href="https://www.bosch-ai.com/">BCAI</a>.
+            Additionally, I worked as a research assistant in the Cognitive Systems lab, focusing on hardware-efficient remote sensing methods with <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/prof-dr-andreas-zell/">Andreas Zell</a>.
+            Before that, I pursued my bachelor's degree in computer science at <a href="https://www.dhbw-stuttgart.de/en">DHBW Stuttgart</a>. I also gained practical experience through multiple internships at <a href="https://www.bosch.de/en/">Bosch</a>, with focus on perception in robotics and autonomous driving.
+          </p>
+          <p align=center>
+            <a href="mailto:koch.sebastian@mail.com">Email</a> &nbsp|&nbsp
+            <a href="files/CV_April22.pdf">CV</a> &nbsp|&nbsp
+            <a href="https://github.com/kochsebastian">GitHub</a> &nbsp|&nbsp
+            <a href="https://scholar.google.com/citations?user=hX7EOUkAAAAJ&hl=en">Google Scholar</a> &nbsp|&nbsp
+            <a href="https://www.linkedin.com/in/sebastian-koch-9ba94316a/"> LinkedIn</a>
+            &nbsp|&nbsp
+            <a href="https://twitter.com/sebastiankoch98">Twitter</a>
+          </p>
+          </td>
+        </tr>
+        </table>
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
       <tr>
