@@ -84,7 +84,7 @@
     .stretch-word {
       display: inline-block;
       font-weight: bold;
-      font-size: 300%;
+      font-size: 200%;
       vertical-align:bottom;
       float:left;
       padding-right:5px;
@@ -142,7 +142,7 @@
   <script src="script/functions.js"></script>
   </head>
   <body>
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
+  <table width="1000" border="0" align="center" cellspacing="0" cellpadding="0">
     <tr>
     <td>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" class="desktop-only">
@@ -244,6 +244,53 @@
           <heading>Research</heading>
         </td>
       </tr>
+      </table>
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+    
+        <tr onmouseout="openscene_stop()" onmouseover="openscene_start()">  
+          <td width="25%">
+            <div class="one">
+            <div class="two" id = 'openscene_shape'>
+            <video  width="166" height="117" muted autoplay loop>
+                <source src="media/openscene_teaser.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video></div>
+            <img src='media/SyMFM6D_eyecatcher.jpg' width="166" height="117"></div>
+            <script type="text/javascript">
+            function openscene_start() { 
+            document.getElementById('openscene_shape').style.opacity = "1";
+            }
+            function openscene_stop() { 
+            document.getElementById('openscene_shape').style.opacity = "0"; 
+            }
+            openscene_stop()
+            </script>
+          </td>
+          <td valign="top" width="75%">
+              <a href="https://pengsongyou.github.io/openscene">
+                <papertitle>
+                  SyMFM6D: Symmetry-aware Multi-directional Fusion for Multi-View 6D Object Pose Estimation
+                </papertitle>
+              </a>
+          <br>
+              Fabian Duffhauß</strong>, 
+              <strong>Sebastian Koch</strong>, 
+              <a href="https://www.bosch-ai.com/research/researcher-pages/t_overviewpage_129.html">Hanna Ziesche</a>, 
+              <a href="https://scholar.google.com/citations?user=xk1gsM8AAAAJ&hl=en">Ngo Anh Vien</a>,
+              <a href="https://alr.anthropomatik.kit.edu/21_65.php">Gerhard Neumann</a>
+          <br>
+          <em>IEEE Robotics and Automation Letter (<strong>RA-L</strong>)</em>, 2023
+            <br>
+            <a href="https://arxiv.org/abs/2307.00306">paper</a> |
+            <!-- <a href="https://pengsongyou.github.io/openscene">project page</a> | -->
+            <!-- <a href="https://youtu.be/jZxCLHyDJf8">video</a> | -->
+            <a href="https://github.com/boschresearch/SyMFM6D">code</a>
+            <p></p>
+            A 6D pose estimation approach utilizing multiple viewpoints and considering object symmetries.
+            <p></p>
+          </td>
+        </tr>
       </table>
     </td>
     </tr>
