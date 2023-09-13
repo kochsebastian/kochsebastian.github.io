@@ -181,20 +181,44 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="media/auto3dsg/teaser.png" width="700" class="center"/>
-      <br><br>
-      <h2 class="subtitle has-text-centered">
-      <strong>Auto3DSG</strong> is pre-training approach to .
-    </h2>
+    
+     <!-- Abstract. -->
+     <div class="columns is-centered has-text-centered">
+      
+      <div class="column is-four-fifths">
+        <div class="hero-body">
+          <img src="media/auto3dsg/teaser.png" width="700" class="center"/>
+        </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>TL;DR: We present Auto3DSG, a novel pre-training approach for 3D scene graphs usning object-level scene reconstructions.</b>
+          </p>
+          <p>
+            3D scene graphs are an emerging representation for 3D
+            scene understanding, combining geometric and semantic
+            information. However, fully supervised learning of 3D
+            semantic scene graphs is challenging due to the need
+            for object-level annotations and especially relationship
+            labels. Self-supervised pre-training methods have improved
+            performance in 3D scene understanding but have received
+            little attention in 3D scene graph prediction. To this end,
+            we propose Auto3DSG, an autoencoder-based pre-training
+            method for 3D semantic scene graph prediction. By
+            reconstructing the 3D input scene from a graph bottleneck,
+            we reduce the need for object relationship labels and
+            can leverage large-scale 3D scene understanding datasets.
+            Our method outperforms baseline models on the main 3D
+            semantic scene graph benchmark and achieves competitive
+            results with only 5% labeled data during fine-tuning.
+         
+          </p>
+        </div>
+      </div>
     </div>
+    <!--/ Abstract. -->
   </div>
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="media/auto3dsg/graphs.png" class="center"/>
-      <br><br>
-    </div>
-  </div>
+  
 </section>
 
 <section class="section">
@@ -205,49 +229,19 @@
             <div class="column is-full_width">
             <h2 class="title is-3">Video</h2>
             <div class="publication-video">
-              <!-- <iframe src="https://www.youtube.com/embed/jZxCLHyDJf8?rel=0&amp;showinfo=0"
+              <!-- <iframe src=""
                       frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
                       
-                <!-- <video id="dollyzoom" controls loop width="100%">
+                <video id="dollyzoom" controls loop width="100%">
                   <source src="media/auto3dsg/auto3dsg_video_full_compressed.mp4"
                           type="video/mp4">
-                </video> -->
+                </video>
             </div>
           </div>
         </div>
         <!--/ Paper video. -->
       
     <br>
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>TL;DR: We present Auto3DSG, a novel pre-training approach for 3D scene graphs usning object-level scene reconstructions.</b>
-          </p>
-          <p>
-            3D scene graphs are an emerging representation for 3D
-scene understanding, combining geometric and semantic
-information. However, fully supervised learning of 3D
-semantic scene graphs is challenging due to the need
-for object-level annotations and especially relationship
-labels. Self-supervised pre-training methods have improved
-performance in 3D scene understanding but have received
-little attention in 3D scene graph prediction. To this end,
-we propose Auto3DSG, an autoencoder-based pre-training
-method for 3D semantic scene graph prediction. By
-reconstructing the 3D input scene from a graph bottleneck,
-we reduce the need for object relationship labels and
-can leverage large-scale 3D scene understanding datasets.
-Our method outperforms baseline models on the main 3D
-semantic scene graph benchmark and achieves competitive
-results with only 5% labeled data during fine-tuning.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
   </div>
 </section>
 
@@ -271,7 +265,6 @@ results with only 5% labeled data during fine-tuning.
       </div>
     </div> -->
     <hr>
-    
       <!-- Method -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -281,7 +274,6 @@ results with only 5% labeled data during fine-tuning.
           <div class="content has-text-justified">
             <br>  
             <p>
-            Explain method here
             </p>
           </div>
         </div>
@@ -289,19 +281,26 @@ results with only 5% labeled data during fine-tuning.
     </div>
 </section> 
   
-    
+<!-- <div class="container is-max-desktop">
+  <div class="hero-body">
+    <img src="media/auto3dsg/graphs.png" class="center"/>
+    <br><br>
+  </div>
+</div> -->
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{Peng2023auto3dsg,
-      title     = {auto3dsg: Autoencoding for 3D Scene Graph Learning via Object-Level Scene Reconstructions},
-      author    = {Peng, Songyou and Genova, Kyle and Jiang, Chiyu "Max" and Tagliasacchi, Andrea and Pollefeys, Marc and Funkhouser, Thomas},
-      booktitle = CVPR,
-      year      = {2023}
+    <pre><code>@article{koch2023auto3dsg,
+      title={Auto3DSG: Autoencoding for 3D Scene Graph Learning via Object-Level Scene Reconstructions},
+      author={Koch, Sebastian and Hermosilla, Pedro and Vaskevicius, Narunas and Colosi, Mirco and Ropinski, Timo},
+      booktitle = {Proceedings of the IEEE International Conference on Computer Vision (ICCV) Workshops},
+      year={2023},
+      month={October}
+    
   }</code></pre>
   </div>
-</section> -->
+</section>
 
 <!-- <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
