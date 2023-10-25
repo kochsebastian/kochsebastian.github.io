@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction">
+  <meta name="keywords" content="SGRec3D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRec3D</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./media/auto3dsg/js/fontawesome.all.min.js"></script>
+  <script src="./media/auto3dsg/js/bulma-carousel.min.js"></script>
+  <script src="./media/auto3dsg/js/bulma-slider.min.js"></script>
+  <script src="./media/auto3dsg/js/index.js"></script>
+  <link rel="icon" type="image/png" href="media/auto3dsg/auto.png">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://kochsebastian.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://kochsebastian.com/">
+                Lang3DSG - 3DV 2024
+                </a>
+          <a class="navbar-item" href="https://kochsebastian.com/">
+            SyMFM6D - RA-L 2023
+          </a>
+          
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SGRec3D
+            <p class="title is-3 publication-title"> SGRec3D: Self-Supervised 3D Scene Graph Learning <br> via Object-Level Scene Reconstruction  </p>
+            <h3 class="title is-4 publication-title">WACV 2024</h3>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://kochsebastian.com">Sebastian Koch</a><sup>1,2,3 * </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+            <a href="">Pedro Hermosilla</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Narunas Vaskevicius</a><sup>1,2</sup></span><br>
+            <span class="author-block">
+              <a href="">Mirco Colosi</a><sup>2</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Timo Ropinski</a><sup>4</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Bosch Center for Artificial Intelligence</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Robert Bosch Corporate Research</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>University of Ulm</span>&nbsp;&nbsp;<br>
+            <span class="author-block"><sup>4</sup>Vienna University of Technology</span>&nbsp;&nbsp;
+          </div>
+          <br>
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2309.15702" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <svg id="logomark" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 17.732 24.269"><style>svg{fill:#ffffff}</style><g id="tiny"><path d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/><path d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)" fill="#ffffff"/><path d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/></g></svg>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="media/sgrec3d/Koch_SGRec3D_WACV2024.pdf" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+            <a href="https://x.com/sebastiankoch98/status/1707333107387359459?s=20" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+              </span>
+              <span>Twitter thread</span>
+            </a>
+          </span>
+<!-- 
+          <span class="link-block">
+            <a href="media/auto3dsg/SGRec3D_SG2RL_ICCV2023_poster_darko.pdf" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Poster</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+                <a href="media/auto3dsg/SGRec3D_SG2RL_ICCV2023_slides.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Talk</span>
+                </a>
+          </span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="media/auto3dsg/teaser.png" style="max-width:100%" /> <br> <br>
+      <h2 class="subtitle has-text-centered">
+        TL;DR: We present SGRec3D, a novel pre-training approach for 3D scene graphs usning object-level scene reconstructions.
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In the field of 3D scene understanding, 3D scene graphs have emerged as a new scene representation that combines geometric and semantic information about objects and their relationships. However, learning semantic 3D scene graphs in a fully supervised manner is inherently difficult as it requires not only object-level annotations but also relationship labels. While pre-training approaches have helped to boost the performance of many methods in various fields, pre-training for 3D scene graph prediction has received little attention. Furthermore, we find in this paper that classical contrastive point cloud-based pre-training approaches are ineffective for 3D scene graph learning. To this end, we present SGRec3D, a novel self-supervised pre-training method for 3D scene graph prediction. We propose to reconstruct the 3D input scene from a graph bottleneck as a pretext task. Pre-training SGRec3D does not require object relationship labels, making it possible to exploit large-scale 3D scene understanding datasets, which were off-limits for 3D scene graph learning before. Our experiments demonstrate that in contrast to recent point cloud-based pre-training approaches, our proposed pre-training improves the 3D scene graph prediction considerably, which results in SOTA performance, outperforming other 3D scene graph models by +10% on object prediction and +4% on relationship prediction. Additionally, we show that only using a small subset of 10% labeled data during fine-tuning is sufficient to outperform the same model without pre-training.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video 🎬</h2>
+        <div class="publication-video">
+          <!-- <iframe width="560" height="315" src=" " title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+          <video id="dollyzoom" controls loop width="100%">
+            <source src="media/auto3dsg/auto3dsg_video_full_compressed.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+  <!-- Architecture Overview -->
+  <section class="section">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3"> <strong>Method</strong> Overview</h2>
+      <div class="content has-text-centered">
+        <img src="media/auto3dsg/method.png" style="max-width:100%" />
+        
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3"> 3D Scene Graph Predictions</h2>
+      <div class="content has-text-centered">
+        <img src="media/auto3dsg/graphs.png" style="max-width:100%" />
+        
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> 3D Scene Reconstructions</h2>
+        <div class="content has-text-centered">
+          <img src="media/auto3dsg/reconstructions.png" style="max-width:100%" />
+          
+        </div>
+      </div>
+    </div>
+    </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX 🙏</h2>
+      <pre><code>
+        @article{koch2023sgrec3d,
+            title={SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction},
+            author={Koch, Sebastian and Hermosilla, Pedro and Vaskevicius, Narunas and Colosi, Mirco and Ropinski, Timo},
+            journal={arXiv preprint arXiv:2309.15702},
+            year={2023}
+          }
+      </code></pre>
+    </div>
+  </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                It borrows the source code of <a href="https://github.com/nerfies/nerfies.github.io">this website</a>.
+                We would like to thank Utkarsh Sinha and Keunhong Park.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
