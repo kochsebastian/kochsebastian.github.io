@@ -202,9 +202,13 @@
   <div class="columns is-centered">
     <div class="column is-full-width">
       <h2 class="title is-3"> <strong>Method</strong> Overview</h2>
-      <div class="content has-text-centered">
+      <div class="content has-text-justified">
         <img src="media/auto3dsg/method_animation.gif" style="max-width:100%" />
-        
+        SGRec3D utilizes an encoder-decoder structure for pre-training (bottom-left) using a
+reconstruction loss by reconstructing the bounding boxes and shape encodings of objects with supervision from a pre-trained AtlasNet.
+The encoder (top-left) generates object and edge embeddings from the input point cloud into a latent graph. The decoder (top-right)
+reconstructs the input point cloud from the graph bottleneck. During fine-tuning (bottom-right), the decoder is discarded and the encoder
+is fine-tuned to predict the node and edge classes.
       </div>
     </div>
   </div>
@@ -214,9 +218,10 @@
   <div class="columns is-centered">
     <div class="column is-full-width">
       <h2 class="title is-3"> 3D Scene Graph Predictions</h2>
-      <div class="content has-text-centered">
+      <div class="content has-text-justified">
         <img src="media/auto3dsg/graphs.png" style="max-width:100%" />
-        
+        We visualize the top-1 object class prediction for each node and the
+predicates with a probability greater than 0.5 for each edge. Ground truth labels are shown in square brackets.
       </div>
     </div>
   </div>
@@ -226,9 +231,11 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3"> 3D Scene Reconstructions</h2>
-        <div class="content has-text-centered">
+        <div class="content has-text-justified">
           <img src="media/auto3dsg/reconstructions.png" style="max-width:100%" />
-          
+          Qualitative results of the reconstructions for four different input scenes. While the reconstruction
+does not represent the input scenes perfectly, it is faithful to the input scenes, as object locations are well-preserved. Furthermore, the
+shapes look similar and the reconstruction quality is stable.
         </div>
       </div>
     </div>
@@ -236,15 +243,15 @@
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX 🙏</h2>
+      <h2 class="title">BibTeX</h2>
       <pre><code>
-        @article{koch2023sgrec,
-            title={SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction},
-            author={Koch, Sebastian and Hermosilla, Pedro and Vaskevicius, Narunas and Colosi, Mirco and Ropinski, Timo},
-            booktitle = {IEEE Winter Conference on Applications of Computer Vision (WACV)},
-            year={2024},
-            month={January}
-          }
+        @inproceedings{koch2023sgrec,
+          title={SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction},
+          author={Koch, Sebastian and Hermosilla, Pedro and Vaskevicius, Narunas and Colosi, Mirco and Ropinski, Timo},
+          booktitle = {IEEE Winter Conference on Applications of Computer Vision (WACV)},
+          year={2024},
+          month={January}
+        }
       </code></pre>
     </div>
   </section>

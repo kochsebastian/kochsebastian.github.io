@@ -52,6 +52,9 @@
           <a class="navbar-item" href="https://kochsebastian.com/">
             SyMFM6D - RA-L 2023
           </a>
+          <a class="navbar-item" href="https://kochsebastian.com/sgrec3d">
+            SGRec3D - WACV 2023
+          </a>
           <a class="navbar-item" href="https://kochsebastian.com/auto3dsg">
             Auto3DSG - ICCV 2023 Workshops
           </a>
@@ -94,19 +97,172 @@
             <span class="author-block"><sup>3</sup>University of Ulm</span>&nbsp;&nbsp;<br>
             <span class="author-block"><sup>4</sup>Vienna University of Technology</span>&nbsp;&nbsp;
           </div>
+          <br>
+          <div>
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2310.16494" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <svg id="logomark" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 17.732 24.269"><style>svg{fill:#ffffff}</style><g id="tiny"><path d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/><path d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)" fill="#ffffff"/><path d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/></g></svg>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="media/lang3dsg/Koch2024lang3dsg_v2.pdf" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+            <span>Paper</span>
+            </a>
+        </span>
+        <!-- <span class="link-block">
+          <a href="media/sgrec3d/wacv2024-1163.pdf" target="_blank"
+             class="button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-palette"></i>
+            </span>
+          <span>Poster</span>
+          </a>
+      </span>
+      <span class="link-block">
+        <a href="https://youtu.be/YB4n_vi0RoE" target="_blank"
+           class="button is-normal is-rounded is-dark color=#1111111">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+        <span>Video</span>
+        </a>
+        </span> -->
+        <br><br>
+      </div>
+        
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <img src="media/lang3dsg/teaser.png" style="max-width:100%" /> <br> <br>
+              <h2 class="subtitle has-text-centered">
+                TL;DR: We present <b>Lang3DSG</b>, a novel alignment of 3D Scene Graphs and language. This alignment improves 3D Scene Graph prediction by a large margin and enable various zero-shot downstream applications with language interaction. <br>
+              </h2>
+            </div>
+          </div>
+        </section>
     <section class="section">
             <div class="container is-max-desktop">
               <!-- Abstract. -->
               <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                  <h2 class="title is-3">News 📰</h2>
-                  <h2 class="subtitle has-text-centered">
-                    <p style="color:#FF0000">>> More information coming soon <<</p> 
+                  <h2 class="title is-3">Abstract</h2>
+                  <h2 class="content has-text-justified">
+                    3D scene graphs are an emerging 3D scene representation, that models both the objects present in the scene as
+ well as their relationships. However, learning 3D scene
+ graphs is a challenging task because it requires not only
+ object labels but also relationship annotations, which are
+ very scarce in datasets. While it is widely accepted that
+ pre-training is an effective approach to improve model per
+formance in low data regimes, in this paper, we find that
+ existing pre-training methods are ill-suited for 3D scene
+ graphs. To solve this issue, we present the first language
+based pre-training approach for 3D scene graphs, whereby
+ we exploit the strong relationship between scene graphs and
+ language. To this end, we leverage the language encoder of
+ CLIP, a popular vision-language model, to distill its knowl
+edge into our graph-based network. We formulate a con
+trastive pre-training, which aligns text embeddings of re
+lationships (subject-predicate-object triplets) and predicted
+ 3D graph features. Our method achieves state-of-the-art re
+sults on the main semantic 3D scene graph benchmark by
+ showing improved effectiveness over pre-training baselines
+ and outperforming all the existing fully supervised scene
+ graph prediction methods by a significant margin. Further
+more, since our scene graph features are language-aligned,
+ it allows us to query the language space of the features in a
+ zero-shot manner. In this paper, we show an example of uti
+lizing this property of the features to predict the room type
+ of a scene without further training.
                   </h2>
                 </div>
               </div>
             </div>
           </section>
+    <section>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/YB4n_vi0RoE?si=rm1U0KNK7ES5Fye3" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            <video id="dollyzoom" controls loop width="100%">
+              <source src=""
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  <!-- Architecture Overview -->
+  <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> <strong>Method</strong> Overview</h2>
+        <div class="content has-text-justified">
+          <img src="media/lang3dsg/method.png" style="max-width:100%" />
+          Our method takes as input a class-agnostic segmented point cloud and
+extracts point sets of objects and pairs of objects (a). The point sets are passed into a PointNet backbone to construct an initial feature graph
+(b). Using a GCN, the features in the graph get refined (c) and node, edge and node-edge-node triplets are projected into the language
+feature space (d). Using a contrastive loss, we align the 3D graph features with the CLIP embeddings of the scene description (e).
+        </div>
+      </div>
+    </div>
+    </section>
+  
+    <section class="section">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3"> 3D Scene Graph Predictions</h2>
+        <div class="content has-text-justified">
+          <img src="media/lang3dsg/results.png" style="max-width:100%" />
+          Qualitative results of 3D scene graph prediction with Lang3DSG for
+three different example scenes. We visualize the top-1 object class prediction for each node and the predicates with a probability greater
+than 0.5 for each edge. Ground truth labels are shown in square brackets.
+        </div>
+      </div>
+    </div>
+    </section>
+  
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Application: Zero-shot room classification</h2>
+          <img src="media/lang3dsg/application.png" class="center" style="max-width:50%" />
+
+          <div class="content has-text-centered">
+            Utilizing the
+language-aligned graph features we can classify the room type of
+a scene by similarity scoring the feature embedding of a room description
+and our 3D graph features. 
+          </div>
+          <img src="media/lang3dsg/zero-shot-room.png" class="center" style="max-width:100%" />
+        </div>
+      </div>
+      </section>
+  
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>
+          @inproceedings{koch2022lang3dsg,
+            title={Lang3DSG: Language-based contrastive pre-training for 3D Scene Graph prediction},
+            author={Koch, Sebastian and Hermosilla, Pedro and Vaskevicius, Narunas and Colosi, Mirco and Ropinski, Timo},
+            booktitle={2024 International Conference on 3D Vision (3DV)},
+            year={2024},
+          }
+        </code></pre>
+      </div>
+    </section>
           
     <footer class="footer">
       <div class="container">
