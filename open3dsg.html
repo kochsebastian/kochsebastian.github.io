@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Open3DSG: Open-Vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships">
+  <meta name="keywords" content="Open3DSG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open3DSG</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./media/auto3dsg/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./media/auto3dsg/js/fontawesome.all.min.js"></script>
+  <script src="./media/auto3dsg/js/bulma-carousel.min.js"></script>
+  <script src="./media/auto3dsg/js/bulma-slider.min.js"></script>
+  <script src="./media/auto3dsg/js/index.js"></script>
+  <link rel="icon" type="image/png" href="media/lang3dsg/languages.png">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://kochsebastian.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://kochsebastian.com/">
+            SyMFM6D - RA-L 2023
+          </a>
+          <a class="navbar-item" href="https://kochsebastian.com/auto3dsg">
+            Auto3DSG - ICCV 2023 Workshops
+          </a>
+          <a class="navbar-item" href="https://kochsebastian.com/sgrec3d">
+            SGRec3D - WACV 2024
+          </a>
+          <a class="navbar-item" href="https://kochsebastian.com/sgrec3d">
+            Open3DSG - 3DV 2024
+          </a>
+         
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title"><img src="media/lang3dsg/languages.png" style="height: 0.75em" alt="Description of the image"> Open3DSG -->
+            <h1 class="title is-1 publication-title"> Open3DSG
+            <p class="title is-3 publication-title"> Open-Vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships</p>
+            <!-- <h3 class="title is-4 publication-title">International Conference on 3D Vision 2024 (3DV)</h3> -->
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://kochsebastian.com">Sebastian Koch</a><sup>1,2,3 * </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+            <a href="https://phermosilla.github.io/">Pedro Hermosilla</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en">Narunas Vaskevicius</a><sup>1,2</sup></span><br>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=k4m1c6EAAAAJ&view_op=list_works&sortby=pubdate">Mirco Colosi</a><sup>2</sup>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Bosch Center for Artificial Intelligence</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Robert Bosch Corporate Research</span>&nbsp;&nbsp; <br>
+            <span class="author-block"><sup>3</sup>University of Ulm</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>4</sup>Vienna University of Technology</span>&nbsp;&nbsp;
+          </div>
+          <br>
+          <div>
+          <span class="link-block">
+            <a href="" target="_blank"
+               class="button is-normal is-rounded is-inactive">
+              <span class="icon">
+                  <svg id="logomark" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 17.732 24.269"><style>svg{fill:#ffffff}</style><g id="tiny"><path d="M573.549,280.916l2.266,2.738,6.674-7.84c.353-.47.52-.717.353-1.117a1.218,1.218,0,0,0-1.061-.748h0a.953.953,0,0,0-.712.262Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/><path d="M579.525,282.225l-10.606-10.174a1.413,1.413,0,0,0-.834-.5,1.09,1.09,0,0,0-1.027.66c-.167.4-.047.681.319,1.206l8.44,10.242h0l-6.282,7.716a1.336,1.336,0,0,0-.323,1.3,1.114,1.114,0,0,0,1.04.69A.992.992,0,0,0,571,293l8.519-7.92A1.924,1.924,0,0,0,579.525,282.225Z" transform="translate(-566.984 -271.548)" fill="#ffffff"/><path d="M584.32,293.912l-8.525-10.275,0,0L573.53,280.9l-1.389,1.254a2.063,2.063,0,0,0,0,2.965l10.812,10.419a.925.925,0,0,0,.742.282,1.039,1.039,0,0,0,.953-.667A1.261,1.261,0,0,0,584.32,293.912Z" transform="translate(-566.984 -271.548)" fill="#bdb9b4"/></g></svg>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="media/open3dsg/open3dsg_camera.pdf" target="_blank"
+               class="button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+            <span>Paper</span>
+            </a>
+        </span>
+        <span class="link-block">
+          <a href="" target="_blank"
+             class="button is-normal is-rounded is-inactive">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+          <span>Code</span>
+          </a>
+      </span>
+      <span class="link-block">
+        <a href="" target="_blank"
+           class="button is-normal is-rounded is-inactive">
+          <span class="icon">
+            <i class="fab fa-youtube"></i>
+          </span>
+        <span>Video</span>
+        </a>
+        </span>
+        <br><br>
+      </div>
+        
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <img src="media/open3dsg/teaser.png" style="max-width:100%" /> <br> <br>
+              <h2 class="subtitle has-text-centered">
+                <!-- TL;DR: We present <b>Open3DSG</b>, a novel alignment of 3D Scene Graphs and language. This alignment improves 3D Scene Graph prediction by a large margin and enable various zero-shot downstream applications with language interaction. <br> -->
+              </h2>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+            <div class="container is-max-desktop">
+              <!-- Abstract. -->
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                  <h2 class="title is-3">News 📰</h2>
+                  <h2 class="subtitle has-text-centered">
+                    <p style="color:#FF0000">>> More information coming soon <<</p> 
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+          
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                It borrows the source code of <a href="https://github.com/nerfies/nerfies.github.io">this website</a>.
+                We would like to thank Utkarsh Sinha and Keunhong Park.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
