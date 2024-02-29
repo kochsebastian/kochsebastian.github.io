@@ -127,7 +127,7 @@
             <span class="icon">
               <i class="fab fa-github"></i>
             </span>
-          <span>Code</span>
+          <span>Code (coming soon)</span>
           </a>
       </span>
       <span class="link-block">
@@ -147,24 +147,120 @@
             <div class="hero-body">
               <img src="media/open3dsg/teaser.png" style="max-width:100%" /> <br> <br>
               <h2 class="subtitle has-text-centered">
-                <!-- TL;DR: We present <b>Open3DSG</b>, a novel alignment of 3D Scene Graphs and language. This alignment improves 3D Scene Graph prediction by a large margin and enable various zero-shot downstream applications with language interaction. <br> -->
+                We present Open3DSG the first approach
+for learning to predict open-vocabulary 3D scene graphs from
+3D point clouds. The advantage of our method is that it can be
+queried and prompted for any instance in the scene, such as the
+TV and Wall, to predict fine-grained semantic descriptions of objects and relationships.
               </h2>
             </div>
           </div>
         </section>
         <section class="section">
-            <div class="container is-max-desktop">
-              <!-- Abstract. -->
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                  <h2 class="title is-3">News 📰</h2>
-                  <h2 class="subtitle has-text-centered">
-                    <p style="color:#FF0000">>> More information coming soon <<</p> 
-                  </h2>
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3"> <strong>Abstract</strong></h2>
+              <div class="content has-text-justified">
+                Current approaches for 3D scene graph prediction rely
+                on labeled datasets to train models for a fixed set of known
+                object classes and relationship categories. We present
+                Open3DSG, an alternative approach to learn 3D scene
+                graph prediction in an open world without requiring labeled scene graph data. We co-embed the features from a
+                3D scene graph prediction backbone with the feature space
+                of powerful open world 2D vision language foundation
+                models. This enables us to predict 3D scene graphs from
+                3D point clouds in a zero-shot manner by querying object
+                classes from an open vocabulary and predicting the interobject relationships from a grounded LLM with scene graph
+                features and queried object classes as context. <br> <br>
+                
+                <strong>Open3DSG</strong>
+                is the first 3D point cloud method to predict not only explicit
+                open-vocabulary object classes, but also open-set relationships that are not limited to a predefined label set, making
+                it possible to express rare as well as specific objects and
+                relationships in the predicted 3D scene graph. Our experiments show that Open3DSG is effective at predicting arbitrary object classes as well as their complex inter-object
+                relationships describing spatial, supportive, semantic and
+                comparative relationships.
+              </div>
+            </div>
+          </div>
+          </section>
+        <section class="section">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <h2 class="title is-3"> <strong>Method</strong> Overview</h2>
+              <div class="content has-text-justified">
+                <img src="media/open3dsg/method.gif" style="max-width:100%" />
+                Given a point cloud and RGB-D images with their poses, we distill the knowledge of two vision-language
+                models into our GNN. The nodes are supervised by the embedding of OpenSeg and the edges are supervised by the embedding of the
+                InstructBLIP vision encoder. At inference time, we first compute the cosine similarity between object queries encoded by CLIP
+                and our distilled 3D node features to infer the object classes. Then we use the edge embedding as well as the inferred object classes to
+                predict relationships for pairs of objects using a Qformer & LLM from InstructBLIP.
+              </div>
+            </div>
+          </div>
+          </section>
+          <section class="section">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <h2 class="title is-3"> <strong>Frame</strong> Selection</h2>
+                <div class="content has-text-justified">
+                  <img src="media/open3dsg/frame_select.gif" style="max-width:100%" />
+                  For each instance in the 3D point cloud, we select the top k frames for object and predicate
+                  supervision. For objects, we encode the frames using OpenSeg and aggregate the computed features over the projected points. For
+                  predicates, we identify object pairs in the frame, crop the image at multiple scales and compute the image feature with the BLIP image
+                  encoder. The features are aggregated over all crops. Finally, both object and predicate features are fused across the multiple views.
                 </div>
               </div>
             </div>
-          </section>
+            </section>
+            <section class="section">
+              <div class="columns is-centered">
+                <div class="column is-full-width">
+                  <h2 class="title is-3"> <strong>Scene Graph Predictions</strong></h2>
+                  <div class="content has-text-justified">
+                    <img src="media/open3dsg/scene_graphs.png" style="max-width:100%" />
+                    We show the top-1 predictions on ScanNet from Open3DSG. The nodes are queried using the 3DSSG 160 class label set, while the edges are generated directly from the graph-conditioned LLM.
+                  </div>
+                </div>
+              </div>
+              </section>
+              <section class="section">
+                <div class="columns is-centered">
+                  <div class="column is-full-width">
+                    <h2 class="title is-3"> <strong>Open-Vocabulary 3D Scene Graph Applications</strong></h2>
+                    <div class="content has-text-justified">
+                      <table style="border-collapse: collapse; border: none; width:100%" class="center" border="0" cellspacing="0" cellpadding="0">
+                        <tr style="border: none;">
+                          <td style="border: none;" align="center" border="0"><img src="media/open3dsg/object_localisation.png" style="max-width:95%" /> </td>
+                          <td style="border: none;" align="center" border="0"><img src="media/open3dsg/attributes.png" style="max-width:95%" align="right" /></td>
+                        </tr>
+                        <tr style="border: none;">
+                          <td style="border: none;" align="center" border="0">Object Retrieval using relationship description</td>
+                          <td style="border: none;" align="center" border="0">3D Scene Graph + Open-Vocabulary Attributes</td>
+                        </tr>
+                      </table><br>
+                      <img src="media/open3dsg/affordances.png" style="max-width:100%" />    
+                      <p align="center">Reasoning over inter-object affordances by LLM prompting</p>
+                    </div>
+                  </div>
+                </div>
+                </section>
+                <section class="section" id="BibTeX">
+                  <div class="container is-max-desktop content">
+                    <h2 class="title">BibTeX</h2>
+                    <div align="left">
+                    <pre><code>
+  @inproceedings{koch2024open3dsg,
+      title={Open3DSG: Open-Vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships},
+      author={Koch, Sebastian  and Vaskevicius, Narunas and Colosi, Mirco and Hermosilla, Pedro and Ropinski, Timo},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      month={June},
+      year={2024},
+  }
+                    </code></pre>
+                    </div>
+                  </div>
+                </section>
     
           
     <footer class="footer">
