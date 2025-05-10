@@ -112,7 +112,21 @@
       cursor: pointer;
     }
   
-    
+    /* 25%-wide, vertically centered cell */
+    td.logo-cell {
+      width: 25%;
+      text-align: center;      /* center the link/image horizontally */
+      vertical-align: middle;  /* center it vertically */
+    }
+
+    /* constrain logo images */
+    td.logo-cell img {
+      max-height: 80px;    /* set your desired uniform height */
+      width: auto;         /* allow width to scale to preserve aspect ratio */
+      max-width: 100%;     /* never exceed the width of its <td> */
+      height: auto;        /* ensure aspect-ratio is honored */
+      display: inline-block; /* remove any baseline whitespace issues */
+    }
   </style>
   <script>
 
@@ -223,39 +237,49 @@
         </tr>
         </table>
 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="25%" valign="middle">
-          <a href="https://www.uni-ulm.de/en/"><img src="media/uni_ulm_logo.png" width="240"></a>
-        </td>
-        <td width="25%" valign="middle">
-          <a href="https://research.google"><img src="media/Google_2015_logo.png" width="240"></a>
-        </td>
-        <td width="25%" valign="middle">
-          <a href="https://www.bosch-ai.com/"><img src="media/bosch_logo.png" width="240"></a>
-        </td>
-        <td width="25%" valign="middle">
-          <a href="https://uni-tuebingen.de/en"><img src="media/uni_tuebingen_logo.png" width="240"></a>
-        </td>
-      </tr>
-      </table>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td class="logo-cell">
+              <a href="https://www.uni-ulm.de/en/">
+                <img src="media/uni_ulm_logo.png" alt="Uni Ulm logo">
+              </a>
+            </td>
+            <td class="logo-cell">
+              <a href="https://research.google">
+                <img src="media/Google_2015_logo.png" alt="Google logo">
+              </a>
+            </td>
+            <td class="logo-cell">
+              <a href="https://www.bosch-ai.com/">
+                <img src="media/bosch_logo.png" alt="Bosch logo">
+              </a>
+            </td>
+            <td class="logo-cell">
+              <a href="https://uni-tuebingen.de/en">
+                <img src="media/uni_tuebingen_logo.png" alt="Uni Tübingen logo">
+              </a>
+            </td>
+          </tr>
+        </table>
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
       <tr>
         <td>
           <heading>News</heading>
             <ul>
-              <li><strong>05/2025</strong> I left Bosch Center for AI and joined Google Munich as a Student Research for the next 6 months!</li>
+              <li><strong>05/2025</strong> I am an <a href="https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee#all-outstanding-reviewer">Oustanding Reviewer</a> at <strong>CVPR 2025</strong>. Super proud about this!</li>
+              <li><strong>05/2025</strong> I left Bosch Center for AI and joined Google Munich as a Student Researcher for the next 6 months!</li>
               <li><strong>02/2025</strong> My paper <a href="https://relationfield.github.io"><strong>RelationField</strong></a> got accepted at <strong>CVPR 2025</strong>! </li>
               <li><strong>02/2025</strong> I gave a talk on Language-driven 3D Scene Graph prediction at the Huawei Munich Research Center <a href="media/Language-driven Scene Understanding-huawai_Feb2025.pdf"> (Slides)</a>.</li>
               <li><strong>04/2024</strong> I was accepted at the prestigious International Computer Vision Summer School <strong>ICVSS 2024</strong>.</li>
               <li><strong>02/2024</strong> My paper <a href="https://kochsebastian.com/open3dsg"><strong>Open3DSG</strong></a> got accepted at <strong>CVPR 2024</strong>! I will also present it at the OpenSUN & SG2RL workshop.</li>
               <li><strong>10/2023</strong> My paper <a href="https://kochsebastian.com/sgrec3d"><strong>SGRec3D</strong></a> got accepted at <strong>WACV 2024</strong>! </li>
               <li><strong>10/2023</strong> My paper <a href="https://kochsebastian.com/lang3dsg"><strong>Lang3DSG</strong></a> got accepted at <strong>3DV 2024</strong>! </li>
+              <a href="javascript:toggleblock(&#39;old_news&#39;)">---- show more ----</a>
+              <div id="old_news" style="display: none;">
               <li><strong>08/2023</strong> I got an workshop paper accepted at the <strong>SG2RL workshop</strong> held at <strong>ICCV 2023</strong> in Paris!</li>
               <li><strong>07/2023</strong> Our follow-up paper to my master's thesis <a href="https://arxiv.org/pdf/2307.00306.pdf"><strong>SyMFM6D</strong></a> has been accepted at <strong>RA-L</strong></li>
-               <a href="javascript:toggleblock(&#39;old_news&#39;)">---- show more ----</a>
-              <div id="old_news" style="display: none;">
+               
                 <li><strong>04/2022</strong> Start of my PhD journey at <a href="https://www.uni-ulm.de/en/">Ulm University</a> & <a href="https://www.bosch-ai.com/">Bosch Research/BCAI</a>. </li>
                 <li><strong>03/2022</strong> I successfully defended my master's thesis on multi-view 6D pose estimation!</li>
                 <!-- <li><strong>03/2022</strong> I successfully defended my master's thesis on multi-view 6D pose estimation!</li> -->
