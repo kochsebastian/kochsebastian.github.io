@@ -1,172 +1,400 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7QH2NS5H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-L7QH2NS5H0');
   </script>
-  <meta name="google-site-verification" content="xDNWUvx6Q5EWK5YYSyKvK8DZTmvXhKsGX203Ll-BFFE" >	
-  <meta name=viewport content=“width=800”>
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <style type="text/css">
-  @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300);
-  /* @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons); */
-    /* Color scheme stolen from Sergey Karayev */
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="xDNWUvx6Q5EWK5YYSyKvK8DZTmvXhKsGX203Ll-BFFE">
+  <title>Sebastian Koch</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="media/icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ===========================
+       Base theme + typography
+       =========================== */
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --fg: #111827;
+      --muted: #374151;
+
+      --card: #ffffff;
+      --border: #e5e7eb;
+
+      --link: #1772d0;
+      --link-visited: var(--link);
+      --link-hover: #f09228;
+
+      --shadow: 0 1px 0 rgba(17, 24, 39, 0.04), 0 8px 24px rgba(17, 24, 39, 0.08);
+      --radius: 14px;
+
+      --font: 'Roboto', system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+
+    /* Dark mode variables */
+    body.dark {
+      /* VS Code Dark+ inspired palette */
+      --bg: #1e1e1e;
+      --fg: #d4d4d4;
+      --muted: #9da3a6;
+
+      --card: #252526;
+      --border: #3c3c3c;
+
+      --link: #3794ff;
+      --link-visited: var(--link);
+      --link-hover: #4fc1ff;
+
+      --shadow: 0 1px 0 rgba(0,0,0,0.35), 0 10px 24px rgba(0,0,0,0.40);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--fg);
+      background: radial-gradient(1000px 400px at 50% -150px, rgba(23,114,208,0.12), rgba(255,255,255,0)) , var(--bg);
+    }
+
+    /* Links */
     a {
-    /*color: #b60a1c;*/
-    color: #1772d0;
-    /*color: #bd0a36;*/
-    text-decoration:none;
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:visited {
+      color: var(--link-visited);
     }
     a:focus, a:hover {
-    color: #f09228;
-    text-decoration:none;
+      color: var(--link-hover);
+      text-decoration: none;
     }
-    body,td,th,tr,p,a {
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    }
+
     strong {
-    font-family: 'Roboto', sans-serif;
-    /*font-family: 'Lato', Verdana, Helvetica, sans-serif;*/
-    /*font-family: 'Avenir Next';*/
-    font-size: 18px;
-    font-weight: 400;
+      font-weight: 400;
     }
-    heading {
-    /*font-family: 'Lato', Verdana, Helvetica, sans-serif;*/
-    font-family: 'Roboto', sans-serif;
-    /*font-family: 'Avenir Next';*/
-    /*src: url("./fonts/Roboto_Mono_for_Powerline.ttf");*/
-    font-size: 28px;
-    font-weight: 400;
-    }
-    papertitle {
-    /*font-family: 'Lato', Verdana, Helvetica, sans-serif;*/
-    font-family: 'Roboto', sans-serif;
-    /*font-family: 'Avenir Next';*/
-    /*src: url("./fonts/Roboto_Mono_for_Powerline.ttf");*/
-    font-size: 18px;
-    font-weight:500;
-    }
-    name {
-    /*font-family: 'Lato', Verdana, Helvetica, sans-serif;*/
-    font-family: 'Roboto', sans-serif;
-    /*font-family: 'Avenir Next';*/
-    font-weight: 400;
-    font-size: 42px;
-    }
-    .one
-    {
-    width: 160px;
-    height: 140px;
-    position: relative;
-    }
-    .two
-    {
-    width: 160px;
-    height: 160px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
-    }
-    .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
-    }
-    span.highlight {
-        background-color: #ffffd0;
-    }
-    .float-left {
-      float: left;
-      margin-right: 10px; /* Adjust the margin as needed */
-    }
+
+    
+
+    /* "Hi!" styling from the original template */
     .stretch-word {
       display: inline-block;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 200%;
-      vertical-align:bottom;
-      float:left;
-      padding-right:5px;
+      vertical-align: bottom;
+      float: left;
+      padding-right: 6px;
+      letter-spacing: 0.02em;
     }
-    @media screen and (max-width: 1000px) {
-    .desktop-only {
-      display: none;
+/* Legacy custom tags used by the template */
+    heading {
+      display: block;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      margin-bottom: 8px;
     }
+
+    papertitle {
+      font-size: 18px;
+      font-weight: 500;
     }
-    @media screen and (min-width: 1001px) {
-    .mobile-only {
-      display: none;
+    name {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 42px;
+      letter-spacing: 0.2px;
     }
+
+    /* Page wrapper: keep original centered layout but responsive */
+    table.page {
+      width: min(1000px, calc(100% - 28px));
+      margin: 0 auto;
+      border-collapse: separate;
+      border-spacing: 0;
     }
+
+    /* Subtle “card” look for major blocks without changing centering */
+    table.page > tbody > tr > td > table {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin: 18px 0;
+    }
+
     
+    /* Section headers should not look like separate cards */
+    table.section-header {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      margin: 14px 0 0 !important;
+    }
+    table.section-header td {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    table.first-after-header {
+      margin-top: 10px !important;
+    }
+
+/* Keep old tables readable on narrow screens */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Section spacing: keep padding but make it consistent */
+    td {
+      color: var(--fg);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0.55em 0;
+    }
+
+    /* Logo row: keep uniform sizes */
+    td.logo-cell {
+      width: 25%;
+      text-align: center;
+      vertical-align: middle;
+    }
+    td.logo-cell img {
+      max-height: 78px;
+      width: auto;
+      max-width: 100%;
+      display: inline-block;
+    }
+
+    /* Profile image hover cursor (no animations) */
     .hover-pointer:hover {
       cursor: pointer;
     }
+
+    /* Mobile/desktop helpers (kept for your current structure) */
+    @media screen and (max-width: 1000px) {
+      .desktop-only { display: none; }
+      name { font-size: 38px; }
+    }
+    @media screen and (min-width: 1001px) {
+      .mobile-only { display: none; }
+    }
+
+    /* Highlight */
+    span.highlight {
+      background-color: rgba(255, 255, 0, 0.20);
+      padding: 0.05em 0.2em;
+      border-radius: 6px;
+    }
+
+    /* “Fancier but still plain”: nicer list spacing */
+    ul {
+      margin: 0.25em 0 0.25em 1.1em;
+      padding: 0;
+      color: var(--muted);
+    }
+    li {
+      margin: 0.25em 0;
+    }
+
+        /* Theme toggle switch */
+    .theme-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle-input {
+      width: 54px;
+      height: 30px;
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      position: relative;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .theme-toggle-input::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--fg);
+      transform: translateX(0);
+      transition: transform 120ms ease;
+    }
+
+    .theme-toggle-input::after {
+      content: "🌙";
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      font-size: 16px;
+      line-height: 1;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .theme-toggle-input:checked::before {
+      transform: translateX(24px);
+    }
+
+    .theme-toggle-input:checked::after {
+      content: "☀️";
+      left: 8px;
+      right: auto;
+    }
+
+    .theme-toggle-input:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    /* ===========================
+       Dark-mode image adaptation
+       - Applies to ALL images except those explicitly opted out.
+       - Profile picture should stay unchanged (class="no-dark").
+       - Favicon is unaffected by CSS anyway.
+       =========================== */
+    body.dark img:not(.no-dark) {
+      /* Standard “dark-mode for images” trick: invert + hue rotate + tune */
+      filter: invert(0.92) hue-rotate(180deg) saturate(1.25) brightness(1.05) contrast(1.05);
+    }
+
+    /* Optional: keep paper figures crisp in dark mode */
+    body.dark img:not(.no-dark) {
+      image-rendering: auto;
+    }
   
-    /* 25%-wide, vertically centered cell */
-    td.logo-cell {
-      width: 25%;
-      text-align: center;      /* center the link/image horizontally */
-      vertical-align: middle;  /* center it vertically */
-    }
-
-    /* constrain logo images */
-    td.logo-cell img {
-      max-height: 80px;    /* set your desired uniform height */
-      width: auto;         /* allow width to scale to preserve aspect ratio */
-      max-width: 100%;     /* never exceed the width of its <td> */
-      height: auto;        /* ensure aspect-ratio is honored */
-      display: inline-block; /* remove any baseline whitespace issues */
-    }
   </style>
+
   <script>
+    // Ensure show-more toggles work even if script/functions.js is missing.
+    function toggleblock(blockId) {
+      var el = document.getElementById(blockId);
+      if (!el) return;
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    }
 
+    // Profile image randomizer (robust vs. absolute URLs)
     function changeImage() {
-      // Get the image element by its ID
       var img = document.getElementById('myImage');
-
-      // Check the current source of the image
-      var currentSrc = img.src;
+      if (!img) return;
 
       var imagePaths = [
+        'media/profile.jpg',
+        'media/profile_object.jpeg',
+        'media/profile_masked.png',
         'https://kochsebastian.com/media/profile.jpg',
         'https://kochsebastian.com/media/profile_object.jpeg',
         'https://kochsebastian.com/media/profile_masked.png'
-        // Add more image paths as needed
       ];
-      
-      // Remove the current image source from the array
-      var filteredPaths = imagePaths.filter(function(path) {
-        return path !== currentSrc;
-      });
 
-      // Generate a random index
-      var randomIndex = Math.floor(Math.random() * filteredPaths.length);
+      var currentPath = "";
+      try {
+        currentPath = new URL(img.src).pathname;
+      } catch (e) {
+        currentPath = img.src;
+      }
 
-      // Get the next image path based on the random index
-      var nextSrc = filteredPaths[randomIndex];
+      function sameImage(candidate) {
+        try {
+          return currentPath.endsWith(new URL(candidate, window.location.href).pathname);
+        } catch (e) {
+          return currentPath.endsWith(candidate);
+        }
+      }
 
-      // Change the source of the image
+      var filtered = imagePaths.filter(function(p) { return !sameImage(p); });
+      if (filtered.length === 0) return;
+
+      var nextSrc = filtered[Math.floor(Math.random() * filtered.length)];
       img.src = nextSrc;
     }
+
+    // Dark mode toggle: light default + localStorage override.
+    (function() {
+      var storageKey = "theme";
+      var inputId = "themeToggle";
+
+      function setTheme(mode) {
+        var isDark = (mode === "dark");
+        document.body.classList.toggle("dark", isDark);
+
+        var input = document.getElementById(inputId);
+        if (input) input.checked = isDark;
+      }
+
+      function initTheme() {
+        var saved = null;
+        try { saved = localStorage.getItem(storageKey); } catch (e) {}
+        // Default is LIGHT (no system-preference auto-switching)
+        var mode = (saved === "dark" || saved === "light") ? saved : "light";
+        setTheme(mode);
+      }
+
+      function onToggle(e) {
+        var isDark = !!(e && e.target && e.target.checked);
+        var mode = isDark ? "dark" : "light";
+        try { localStorage.setItem(storageKey, mode); } catch (e) {}
+        setTheme(mode);
+      }
+
+      window.addEventListener("DOMContentLoaded", function() {
+        initTheme();
+        var input = document.getElementById(inputId);
+        if (input) input.addEventListener("change", onToggle);
+      });
+    })();
   </script>
-  <link rel="icon" type="image/png" href="media/icon.png">
-  <title>Sebastian Koch</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Keep your existing helper script (optional) -->
   <script src="script/functions.js"></script>
-  </head>
-  <body>
-  <table width="1000" border="0" align="center" cellspacing="0" cellpadding="0">
+</head>
+
+<body>
+  <div class="theme-toggle" aria-label="Theme">
+    <input id="themeToggle" class="theme-toggle-input" type="checkbox" role="switch" aria-label="Toggle dark mode">
+  </div>
+
+  <table id="page" class="page" border="0" align="center" cellspacing="0" cellpadding="0">
     <tr>
     <td>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" class="desktop-only">
@@ -198,7 +426,7 @@
         </p>
         </td>
         <td width="33%">
-            <img id="myImage" class="hover-pointer" src="media/profile.jpg" width="250" onclick="changeImage()"> 
+            <img id="myImage" class="hover-pointer no-dark" src="media/profile.jpg" width="250" onclick="changeImage()"> 
         </td>
       </tr>
       </table>
@@ -209,13 +437,12 @@
             <name>Sebastian Koch</name>
           </p>
           <p align="center">
-            <img id="myImage" src="media/profile.jpg" width="450" onclick="changeImage()"> 
+            <img id="myImage" class="no-dark" src="media/profile.jpg" width="450" onclick="changeImage()"> 
           </p>
           
           <p>
             <span class="stretch-word">Hi!</span> 
-            I am a PhD student at <a href="https://www.uni-ulm.de/en/">University Ulm</a> advised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a> and a Google Student Researcher working closly with <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en"> Johanna Wald</a> and <a href="https://federicotombari.github.io/">Federico Tombari</a>. Previously, I have been an industrial PhD Student at the <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>.
-            </p>
+            I’m a final-year PhD student at the <a href="https://www.uni-ulm.de/en/">University of Ulm</a>, advised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>. During my PhD, I closely collaborate with <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en">Johanna Wald</a> and <a href="https://federicotombari.github.io/">Federico Tombari</a> at Google. For the first three years of my PhD, I was funded by and collaborated with the <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>.            </p>
             <p  align="justify">
             My main research interest lies at the intersection of 3D scene understanding and embodied AI, focusing on investigating novel scene representations of real-world environments that include object semantics as well as information about object interactions and their relationships. My work aims to enable robots to navigate and solve tasks more effectively by leveraging a detailed understanding of their environment.
             </p>
@@ -288,13 +515,15 @@
             </ul>
         </td>
       </tr>
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Research</heading>
-        </td>
-      </tr>
       </table>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+      <table class="section-header" width="100%" align="center" border="0" cellspacing="0" cellpadding="12" >
+        <tr>
+          <td width="100%" valign="middle">
+            <heading>Research</heading>
+          </td>
+        </tr>
+      </table>
+      <table class="first-after-header" width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
         <tr>
           <td width="25%">
             <div class="">
@@ -628,7 +857,6 @@
       </td>
     </tr>
   </table>
-     
-  </body>
+
+</body>
 </html>
-<!--  -->
