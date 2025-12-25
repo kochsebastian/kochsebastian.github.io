@@ -197,6 +197,78 @@
       cursor: pointer;
     }
 
+
+    /* Clickable profile photo affordance (hover + focus) */
+    .clickable-photo {
+      display: inline-block;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transform: translateY(0);
+      transition: transform 140ms ease, box-shadow 140ms ease;
+    }
+    .clickable-photo img {
+      display: block;
+      border-radius: 16px;
+    }
+
+    /* 1) Lift + subtle ring */
+    .clickable-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      pointer-events: none;
+      box-shadow: 0 0 0 0 rgba(23, 114, 208, 0.0);
+      transition: box-shadow 140ms ease;
+    }
+
+    /* 4) Hover sheen (single sweep, no looping animation) */
+    .clickable-photo::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      pointer-events: none;
+      background: linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.0) 35%,
+        rgba(255, 255, 255, 0.16) 50%,
+        rgba(255, 255, 255, 0.0) 65%
+      );
+      transform: translateX(-60%) rotate(10deg);
+      opacity: 0;
+      transition: opacity 160ms ease, transform 420ms ease;
+    }
+
+    .clickable-photo:hover,
+    .clickable-photo:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .clickable-photo:hover::after,
+    .clickable-photo:focus-visible::after {
+      box-shadow: 0 0 0 2px var(--link);
+    }
+    .clickable-photo:hover::before,
+    .clickable-photo:focus-visible::before {
+      opacity: 1;
+      transform: translateX(60%) rotate(10deg);
+    }
+
+    /* 5) Keyboard focus */
+    .clickable-photo:focus {
+      outline: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .clickable-photo,
+      .clickable-photo::before,
+      .clickable-photo::after {
+        transition: none;
+      }
+    }
+
     /* Mobile/desktop helpers (kept for your current structure) */
     @media screen and (max-width: 1000px) {
       .desktop-only { display: none; }
@@ -381,6 +453,15 @@
         initTheme();
         var input = document.getElementById(inputId);
         if (input) input.addEventListener("change", onToggle);
+        var photo = document.querySelector(".clickable-photo");
+        if (photo) {
+          photo.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              changeImage();
+            }
+          });
+        }
       });
     })();
   </script>
@@ -426,7 +507,9 @@
         </p>
         </td>
         <td width="33%">
-            <img id="myImage" class="hover-pointer no-dark" src="media/profile.jpg" width="250" onclick="changeImage()"> 
+            <span class="clickable-photo" role="button" tabindex="0" aria-label="Change profile picture" onclick="changeImage()">
+              <img id="myImage" class="no-dark" src="media/profile.jpg" width="250" alt="Portrait of Sebastian Koch">
+            </span> 
         </td>
       </tr>
       </table>
@@ -442,7 +525,12 @@
           
           <p>
             <span class="stretch-word">Hi!</span> 
-            I’m a final-year PhD student at the <a href="https://www.uni-ulm.de/en/">University of Ulm</a>, advised by <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>. During my PhD, I closely collaborate with <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en">Johanna Wald</a> and <a href="https://federicotombari.github.io/">Federico Tombari</a> at Google. For the first three years of my PhD, I was funded by and collaborated with the <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>.            </p>
+            I am a PhD student at <a href="https://www.uni-ulm.de/en/">Ulm University</a> advised by
+            <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a> and a Google Student Researcher
+            working closely with <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en">Johanna Wald</a>
+            and <a href="https://federicotombari.github.io/">Federico Tombari</a>. Previously, I was an industrial PhD
+            student at the <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>.
+          </p>
             <p  align="justify">
             My main research interest lies at the intersection of 3D scene understanding and embodied AI, focusing on investigating novel scene representations of real-world environments that include object semantics as well as information about object interactions and their relationships. My work aims to enable robots to navigate and solve tasks more effectively by leveraging a detailed understanding of their environment.
             </p>

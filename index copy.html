@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sebastian Koch - PhD student working on 3D scene understanding, embodied AI, and open-vocabulary 3D scene graphs.">
+  <meta name="google-site-verification" content="xDNWUvx6Q5EWK5YYSyKvK8DZTmvXhKsGX203Ll-BFFE">
+  <title>Sebastian Koch</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="media/icon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7QH2NS5H0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L7QH2NS5H0');
+  </script>
+
+  <style>
+    :root{
+      --text: #111;
+      --muted: #555;
+      --link: #1772d0;
+      --link-hover: #f09228;
+      --border: #e8e8e8;
+      --bg: #fff;
+      --maxw: 1000px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+    a:hover, a:focus{ color: var(--link-hover); text-decoration: none; }
+
+    .container{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      position: static;
+      width: auto; height: auto;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+
+    header{
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 26px;
+      align-items: center;
+    }
+
+    h1{
+      font-size: 44px;
+      font-weight: 400;
+      margin: 0 0 8px 0;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+    }
+
+    .intro p{ margin: 10px 0; }
+    .hi{
+      display: inline-block;
+      font-weight: 700;
+      font-size: 200%;
+      vertical-align: bottom;
+      margin-right: 6px;
+      line-height: 1;
+    }
+
+    .links{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+    .links a{ white-space: nowrap; }
+
+    .profile{
+      justify-self: end;
+      text-align: right;
+    }
+    .profile img{
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .profile .hint{
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .logos{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin: 18px 0 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+    .logos a{
+      display: grid;
+      place-items: center;
+      min-height: 76px;
+    }
+    .logos img{
+      max-height: 70px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    section{ margin-top: 26px; }
+    h2{
+      font-size: 28px;
+      font-weight: 400;
+      margin: 0 0 10px 0;
+    }
+
+    ul{ margin: 10px 0 0 22px; padding: 0; }
+    li{ margin: 6px 0; }
+    strong{ font-weight: 500; }
+
+    .more-toggle{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      font: inherit;
+      color: var(--link);
+      cursor: pointer;
+    }
+    .more-toggle:hover{ color: var(--link-hover); }
+
+    .pub{
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .pub:last-child{ border-bottom: none; }
+
+    .pub img{
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .papertitle{
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .venue{
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer{
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      header{ grid-template-columns: 1fr; }
+      .profile{ justify-self: start; text-align: left; }
+      .profile img{ width: min(520px, 100%); }
+      .logos{ grid-template-columns: repeat(2, 1fr); }
+      .pub{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script>
+    // Robust show/hide helper (keeps your existing toggleblock() calls working)
+    function toggleblock(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    }
+
+    // Randomly rotate profile picture on click
+    function changeImage() {
+      var img = document.getElementById("myImage");
+      if (!img) return;
+
+      var imagePaths = [
+        "media/profile.jpg",
+        "media/profile_object.jpeg",
+        "media/profile_masked.png"
+      ];
+
+      // Use the attribute (relative path) rather than img.src (absolute URL).
+      var current = img.getAttribute("src") || "";
+      var filtered = imagePaths.filter(function(p) { return p !== current; });
+      if (filtered.length === 0) filtered = imagePaths;
+
+      var next = filtered[Math.floor(Math.random() * filtered.length)];
+      img.setAttribute("src", next);
+    }
+
+    // Security: for external links, add rel=noopener/noreferrer automatically.
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('a[href^="http"]').forEach(function(a){
+        try{
+          var u = new URL(a.href);
+          if (u.hostname && u.hostname !== window.location.hostname) {
+            a.setAttribute("target", "_blank");
+            a.setAttribute("rel", "noopener noreferrer");
+          }
+        } catch(e) {}
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="container" id="main">
+    <header>
+      <div class="intro">
+        <h1>Sebastian Koch</h1>
+
+        <p>
+          <span class="hi">Hi!</span>
+          I am a PhD student at <a href="https://www.uni-ulm.de/en/">Ulm University</a> advised by
+          <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a> and a Google Student Researcher
+          working closely with <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en">Johanna Wald</a>
+          and <a href="https://federicotombari.github.io/">Federico Tombari</a>. Previously, I was an industrial PhD
+          student at the <a href="https://www.bosch-ai.com/">Bosch Center for AI</a>.
+        </p>
+
+        <p>
+          My main research interest lies at the intersection of 3D scene understanding and embodied AI, focusing on
+          novel scene representations of real-world environments that include object semantics and information about
+          interactions and relationships. My work aims to enable robots to navigate and solve tasks more effectively by
+          leveraging a detailed understanding of their environment.
+        </p>
+
+        <p>
+          I completed my master's degree in computer science at the
+          <a href="https://uni-tuebingen.de/en">University of Tübingen</a>. In my master's thesis, I investigated
+          multi-view and symmetry-aware 6D pose estimation under the guidance of
+          <a href="https://www.cvlibs.net/">Andreas Geiger</a> and
+          <a href="https://alr.anthropomatik.kit.edu/21_65.php">Gerhard Neumann</a>, in collaboration with
+          <a href="https://www.bosch-ai.com/">BCAI</a>. Additionally, I worked as a research assistant in the Cognitive
+          Systems lab, focusing on hardware-efficient remote sensing methods with
+          <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/prof-dr-andreas-zell/">Andreas Zell</a>.
+          Before that, I pursued my bachelor's degree in computer science at
+          <a href="https://www.dhbw-stuttgart.de/en">DHBW Stuttgart</a> and completed multiple internships at
+          <a href="https://www.bosch.de/en/">Bosch</a>, with a focus on perception in robotics and autonomous driving.
+        </p>
+
+        <nav class="links" aria-label="Primary">
+          <a href="mailto:kochsebastian98@gmail.com">Email</a>
+          <a href="files/cv_2025_3page.pdf">CV</a>
+          <a href="https://github.com/kochsebastian">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=hX7EOUkAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/sebastian-koch-9ba94316a/">LinkedIn</a>
+          <a href="https://twitter.com/sebastiankoch98">Twitter</a>
+        </nav>
+      </div>
+
+      <div class="profile">
+        <img id="myImage" src="media/profile.jpg" alt="Portrait of Sebastian Koch" loading="eager" width="250" height="250" onclick="changeImage()">
+        <div class="hint">Click the photo to change it.</div>
+      </div>
+    </header>
+
+    <div class="logos" aria-label="Affiliations">
+      <a href="https://www.uni-ulm.de/en/"><img src="media/uni_ulm_logo.png" alt="Ulm University logo" loading="lazy"></a>
+      <a href="https://research.google"><img src="media/Google_2015_logo.png" alt="Google Research logo" loading="lazy"></a>
+      <a href="https://www.bosch-ai.com/"><img src="media/bosch_logo.png" alt="Bosch logo" loading="lazy"></a>
+      <a href="https://uni-tuebingen.de/en"><img src="media/uni_tuebingen_logo.png" alt="University of Tübingen logo" loading="lazy"></a>
+    </div>
+
+    <section>
+      <h2>News</h2>
+      <ul>
+        <li><strong>05/2025</strong> I was named an <a href="https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee#all-outstanding-reviewer">Outstanding Reviewer</a> at <strong>CVPR 2025</strong>.</li>
+        <li><strong>05/2025</strong> I left Bosch Center for AI and joined Google Munich as a Student Researcher for the next 6 months.</li>
+        <li><strong>02/2025</strong> My paper <a href="https://relationfield.github.io"><strong>RelationField</strong></a> got accepted at <strong>CVPR 2025</strong>.</li>
+        <li><strong>02/2025</strong> I gave a talk on Language-driven 3D Scene Graph prediction at the Huawei Munich Research Center <a href="media/Language-driven Scene Understanding-huawai_Feb2025.pdf">(Slides)</a>.</li>
+        <li><strong>04/2024</strong> I was accepted at the International Computer Vision Summer School <strong>ICVSS 2024</strong>.</li>
+        <li><strong>02/2024</strong> My paper <a href="https://kochsebastian.com/open3dsg"><strong>Open3DSG</strong></a> got accepted at <strong>CVPR 2024</strong> and was presented at the OpenSUN & SG2RL workshop.</li>
+        <li><strong>10/2023</strong> My paper <a href="https://kochsebastian.com/sgrec3d"><strong>SGRec3D</strong></a> got accepted at <strong>WACV 2024</strong>.</li>
+        <li><strong>10/2023</strong> My paper <a href="https://kochsebastian.com/lang3dsg"><strong>Lang3DSG</strong></a> got accepted at <strong>3DV 2024</strong>.</li>
+      </ul>
+
+      <button class="more-toggle" type="button" onclick="toggleblock('old_news')">Show more</button>
+      <div id="old_news" style="display:none;">
+        <ul>
+          <li><strong>08/2023</strong> I got a workshop paper accepted at the <strong>SG2RL workshop</strong> held at <strong>ICCV 2023</strong> in Paris.</li>
+          <li><strong>07/2023</strong> Our follow-up paper to my master's thesis <a href="https://arxiv.org/pdf/2307.00306.pdf"><strong>SyMFM6D</strong></a> has been accepted at <strong>RA-L</strong>.</li>
+          <li><strong>04/2022</strong> Start of my PhD journey at Ulm University and Bosch Research / BCAI.</li>
+          <li><strong>03/2022</strong> I successfully defended my master's thesis on multi-view 6D pose estimation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research</h2>
+
+      <article class="pub">
+        <div>
+          <img src="media/openhype.png" alt="OpenHype teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://lisaweijler.github.io/openhype-projectpage/">OpenHype: Hyperbolic Embeddings for Hierarchical Open-Vocabulary Radiance Fields</a><br>
+          <a href="https://lisaweijler.github.io/">Lisa Weijler</a>, <strong>Sebastian Koch</strong>, <a href="https://fabiopoiesi.github.io/">Fabio Poiesi</a>, <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a>, <a href="https://phermosilla.github.io/">Pedro Hermosilla</a><br>
+          <span class="venue">Advances in Neural Information Processing Systems (NeurIPS), 2025</span><br>
+          <a href="https://lisaweijler.github.io/openhype-projectpage/static/images/OpenHype.pdf">paper</a> |
+          <a href="https://lisaweijler.github.io/openhype-projectpage/">project page</a> |
+          <a href="bib/weijler2025openhype.bib">bibtex</a>
+          <p>Radiance fields with hyperbolic open-vocabulary features enabling reasoning over object hierarchies.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/relationfield/relationfield_teaser.png" alt="RelationField teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://relationfield.github.io">RelationField: Relate Anything in Radiance Fields</a><br>
+          <strong>Sebastian Koch</strong>, <a href="https://scholar.google.com/citations?user=dfjN3YAAAAAJ&hl=en&oi=ao">Johanna Wald</a>, <a href="https://scholar.google.com/citations?hl=en&user=k4m1c6EAAAAJ">Mirco Colosi</a>, <a href="https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en">Narunas Vaskevicius</a>, <a href="https://phermosilla.github.io/">Pedro Hermosilla</a>, <a href="https://federicotombari.github.io/">Federico Tombari</a>, <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><br>
+          <span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025</span><br>
+          <a href="media/relationfield/relationfield_arxiv.pdf">paper</a> |
+          <a href="https://relationfield.github.io">project page</a> |
+          <a href="https://github.com/boschresearch/RelationField">code</a> |
+          <a href="bib/koch2025relationfield.bib">bibtex</a>
+          <p>Open-vocabulary 3D relationships in radiance fields, learned solely from 2D image supervision.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/delta/sg_allensville.drawio.png" alt="DELTA teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://delta-llm.github.io/">DELTA: Decomposed Efficient Long-Term Robot Task Planning using Large Language Models</a><br>
+          <a href="https://scholar.google.com/citations?user=dAfwuBQAAAAJ&hl=en">Yuchen Liu</a>, <a href="https://palmieri.github.io/">Luigi Palmieri</a>, <strong>Sebastian Koch</strong>, <a href="https://scholar.google.com/citations?user=RN7G80gAAAAJ&hl=en">Ilche Georgievski</a>, <a href="https://scholar.google.com/citations?user=XvRUyU4AAAAJ&hl=en">Marco Aiello</a><br>
+          <span class="venue">IEEE International Conference on Robotics and Automation (ICRA), 2025</span><br>
+          <a href="https://arxiv.org/pdf/2404.03275">paper</a> |
+          <a href="https://delta-llm.github.io/">project page</a> |
+          <a href="media/delta/liu2025delta.bib">bibtex</a>
+          <p>Long-term robot task planning with 3D scene graphs and large language models.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/open3dsg/teaser.png" alt="Open3DSG teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://kochsebastian.com/open3dsg">Open3DSG: Open-Vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships</a><br>
+          <strong>Sebastian Koch</strong>, <a href="https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en">Narunas Vaskevicius</a>, <a href="https://scholar.google.com/citations?hl=en&user=k4m1c6EAAAAJ&view_op=list_works&sortby=pubdate">Mirco Colosi</a>, <a href="https://phermosilla.github.io/">Pedro Hermosilla</a>, <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><br>
+          <span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024</span><br>
+          <a href="media/open3dsg/open3dsg_camera.pdf">paper</a> |
+          <a href="https://kochsebastian.com/open3dsg">project page</a> |
+          <a href="media/open3dsg/open3dsg_poster.pdf">poster</a> |
+          <a href="https://github.com/boschresearch/Open3DSG">code</a> |
+          <a href="https://youtu.be/1DL8R_ZfpLw?si=XlajcJEsFngUXDgI">video</a> |
+          <a href="bib/koch2024open3dsg.bib">bibtex</a>
+          <p>The first open-vocabulary 3D scene graph method with open-world relationships.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/lang3dsg/teaser.png" alt="Lang3DSG teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://kochsebastian.com/lang3dsg">Lang3DSG: Language-based contrastive pre-training for 3D Scene Graph prediction</a><br>
+          <strong>Sebastian Koch</strong>, <a href="https://phermosilla.github.io/">Pedro Hermosilla</a>, <a href="https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en">Narunas Vaskevicius</a>, <a href="https://scholar.google.com/citations?hl=en&user=k4m1c6EAAAAJ&view_op=list_works&sortby=pubdate">Mirco Colosi</a>, <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><br>
+          <span class="venue">International Conference on 3D Vision (3DV), 2024</span><br>
+          <a href="files/Koch2024Lang3DSG.pdf">paper</a> |
+          <a href="https://kochsebastian.com/lang3dsg">project page</a> |
+          <a href="media/lang3dsg/3dv2024-1163.pdf">poster</a> |
+          <a href="bib/koch2024lang3dsg.bib">bibtex</a>
+          <p>Language and 3D scene graph alignment using contrastive pre-training.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/auto3dsg_preview.png" alt="SGRec3D teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://kochsebastian.com/sgrec3d">SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction</a><br>
+          <strong>Sebastian Koch</strong>, <a href="https://phermosilla.github.io/">Pedro Hermosilla</a>, <a href="https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en">Narunas Vaskevicius</a>, <a href="https://scholar.google.com/citations?hl=en&user=k4m1c6EAAAAJ&view_op=list_works&sortby=pubdate">Mirco Colosi</a>, <a href="https://viscom.uni-ulm.de/members/timo-ropinski/">Timo Ropinski</a><br>
+          <span class="venue">IEEE Winter Conference on Applications of Computer Vision (WACV), 2024</span><br>
+          <a href="files/Koch_SGRec3D_WACV2024.pdf">paper</a> |
+          <a href="https://kochsebastian.com/sgrec3d">project page</a> |
+          <a href="media/sgrec3d/wacv2024-1163.pdf">poster</a> |
+          <a href="https://youtu.be/YB4n_vi0RoE">video</a> |
+          <a href="bib/koch2024sgrec3d.bib">bibtex</a>
+          <p>A label-efficient method to predict 3D semantic scene graphs for indoor environments.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/SyMFM6D_eyecatcher.jpg" alt="SyMFM6D teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://arxiv.org/abs/2307.00306">SyMFM6D: Symmetry-aware Multi-directional Fusion for Multi-View 6D Object Pose Estimation</a><br>
+          <a href="https://alr.anthropomatik.kit.edu/21_114.php">Fabian Duffhauß</a>, <strong>Sebastian Koch</strong>, <a href="https://www.bosch-ai.com/research/researcher-pages/t_overviewpage_129.html">Hanna Ziesche</a>, <a href="https://scholar.google.com/citations?user=xk1gsM8AAAAJ&hl=en">Ngo Anh Vien</a>, <a href="https://alr.anthropomatik.kit.edu/21_65.php">Gerhard Neumann</a><br>
+          <span class="venue">IEEE Robotics and Automation Letters (RA-L), 2023 &amp; IEEE International Conference on Robotics and Automation (ICRA), 2024</span><br>
+          <a href="https://arxiv.org/abs/2307.00306">paper</a> |
+          <a href="https://github.com/boschresearch/SyMFM6D">code</a> |
+          <a href="bib/duffhauss2023symfm6d.bib">bibtex</a>
+          <p>A 6D pose estimation approach utilizing multiple viewpoints and considering object symmetries.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/ycb_pose.png" alt="MSc thesis teaser" loading="lazy">
+        </div>
+        <div>
+          <span class="papertitle">Multi-View RGB-D Fusion for 6D Pose Estimation</span><br>
+          <strong>Sebastian Koch</strong><br>
+          <span class="venue">M.Sc. Thesis, University of Tübingen, 2022</span><br>
+          <a href="media/MasterThesis.pdf">thesis</a> |
+          <a href="media/FinalMasterThesisPresentation.pdf">slides</a> |
+          <a href="bib/msc.bib">bibtex</a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <img src="media/preview_drone.png" alt="Remote sensing paper teaser" loading="lazy">
+        </div>
+        <div>
+          <a class="papertitle" href="https://www.mdpi.com/2072-4292/14/21/5508">Comprehensive Analysis of the Object Detection Pipeline on UAVs</a><br>
+          <a href="https://scholar.google.com/citations?user=4XOjpZ8AAAAJ&hl=en">Leon Amadeus Varga</a>, <strong>Sebastian Koch</strong>, <a href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/prof-dr-andreas-zell/">Andreas Zell</a><br>
+          <span class="venue">Remote Sensing, 2022</span><br>
+          <a href="https://www.mdpi.com/2072-4292/14/21/5508">paper</a> |
+          <a href="https://github.com/cogsys-tuebingen/cp_eval">code</a> |
+          <a href="bib/varga2022comprehensive.bib">bibtex</a>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      template adapted from <a href="https://jonbarron.info/">this website</a>
+    </footer>
+  </div>
+</body>
+</html>
