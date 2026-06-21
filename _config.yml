@@ -55,7 +55,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter sebastiank0ch
 facebook:
   username               :
   app_id                 :
@@ -97,14 +97,14 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "sebastian-koch-9ba94316a/"
+  linkedin         : "sebastiank0ch/"
   orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          : "sebastiank0ch"
   vine             :
   weibo            :
   xing             : "Sebastian_Koch311/"
