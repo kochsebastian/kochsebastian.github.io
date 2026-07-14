@@ -1,0 +1,333 @@
+% !TEX program = xelatex
+%
+% CV of Sebastian Koch — LaTeX port of the MS Word template cv_2026_3page.docx.
+% Compile with XeLaTeX (fonts: Roboto, Arial, Times New Roman via fontspec;
+% Carlito from TeX Live stands in for the URL font in the header).
+\documentclass{article}
+
+\usepackage[letterpaper,
+            left=0.5in, right=0.5in,
+            top=0.591in, bottom=0.7in,
+            footskip=12.5pt]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+% ---------------------------------------------------------------- fonts ----
+\setmainfont{Roboto}
+\newfontfamily\headerserif{Times New Roman}
+\newfontfamily\headersans{Arial}
+\newfontfamily\urlfont{Carlito-Regular.ttf}[
+  BoldFont=Carlito-Bold.ttf, ItalicFont=Carlito-Italic.ttf]
+
+% Word line grid (measured from the reference PDF at 150 dpi):
+%   10.5pt body on a 13.49pt grid, bullets add 0.96pt paragraph spacing,
+%   compact sections (honors/publications/talks) use a 12.53pt grid.
+\newcommand{\bodysize}{\fontsize{10.5}{13.49}\selectfont}
+\newcommand{\compactsize}{\fontsize{10.5}{12.53}\selectfont}
+\newcommand{\datesize}{\fontsize{9}{11.56}\selectfont}
+\newcommand{\bulletgap}{\vskip 0.96pt}
+
+% -------------------------------------------------------------- colours ----
+\definecolor{dategray}{HTML}{767171}
+\definecolor{footgray}{HTML}{7F7F7F}
+
+% -------------------------------------------------------------- layout -----
+% Word table geometry: date column, 0.075in padding on each side of the
+% 1pt gray divider, content column filling the rest of the line.
+\newlength{\dcw}   % date column width
+\newlength{\ccw}   % content column width
+\newcommand{\datebar}{\kern0.075in{\color{dategray}\vrule width 1pt}\kern0.075in}
+\newcommand{\datestyle}{\raggedleft\arraybackslash\datesize\leavevmode\color{dategray}}
+
+% \begin{cvtable}[<content font>]{<date column width>}
+\newenvironment{cvtable}[2][\bodysize]{%
+  \setlength{\dcw}{#2}%
+  \setlength{\ccw}{\dimexpr\textwidth-\dcw-0.314in\relax}%
+  \setlength{\LTpre}{3.2pt}\setlength{\LTpost}{0pt}%
+  \setlength{\LTleft}{0pt}\setlength{\LTright}{\fill}%
+  \setlength{\tabcolsep}{0pt}%
+  \begin{longtable}{@{\kern0.075in}>{\datestyle}p{\dcw}!{\datebar}>{\raggedright\arraybackslash#1}p{\ccw}@{}}%
+}{\end{longtable}\vspace{\entrygap}}
+
+% Company line in the Experience section: full-width row without the divider.
+\newcommand{\company}[1]{\multicolumn{2}{@{}l@{}}{\kern0.194in\textbf{#1}}\\}
+
+% Word's Symbol-font bullet is much larger than Roboto's \textbullet.
+\newcommand{\cvbullet}{\raisebox{-0.185em}{\scalebox{1.6}{\textbullet}}}
+
+% Bullet items: bullet hangs left of the text, text indented 0.42in.
+% \bitem is left-aligned (Word default), \bitemj justified (Word jc=both),
+% \bitems is the small 9.5pt variant.
+\newcommand{\bitem}[1]{\bulletgap{\setlength{\leftskip}{0.4215in}\noindent
+  \llap{\cvbullet\kern0.12in}#1\par}}
+\newcommand{\bitemj}[1]{\bulletgap{\setlength{\leftskip}{0.4215in}%
+  \rightskip=0pt \parfillskip=0pt plus 1fil \noindent
+  \llap{\cvbullet\kern0.12in}#1\par}}
+\newcommand{\bitems}[1]{\bulletgap{\fontsize{9.5}{12.2}\selectfont
+  \setlength{\leftskip}{0.4215in}\noindent\llap{\cvbullet\kern0.12in}#1\par}}
+
+% Continuation bullet: no leading glue (for cells that start a table row).
+\newcommand{\bitemcont}[1]{{\setlength{\leftskip}{0.4215in}%
+  \rightskip=0pt \parfillskip=0pt plus 1fil \noindent
+  \llap{\cvbullet\kern0.12in}#1\par}}
+
+% Publication entry: hanging indent of 0.221in (Word ind l=318, hanging=318).
+\newcommand{\pubitem}[1]{{\hangindent=0.221in \hangafter=1 \noindent#1\par}}
+
+% ------------------------------------------------------------ sections -----
+\newlength{\entrygap}\setlength{\entrygap}{4.6pt}
+% \cvsection[<space above>]{<title>}
+\newcommand{\cvsection}[2][14pt]{%
+  \par\vspace{#1}%
+  {\noindent\fontsize{11}{13.2}\selectfont\bfseries #2\par}%
+  \vspace{2pt}\hrule height 1pt
+  \vspace{5pt}}
+
+% -------------------------------------------------------------- footer -----
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\color{footgray}\fontsize{9}{10.8}\selectfont Updated July 2026}
+
+\hyphenpenalty=10000 % no auto-hyphenation (Word); breaks at explicit hyphens stay allowed
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\begin{document}\bodysize
+
+% ================================================================ header ====
+% The Word template pulls the header table above the top margin.
+\vspace*{-40pt}
+\begin{center}
+  {\headersans\fontsize{24}{26}\selectfont S{\fontsize{18.7}{26}\selectfont EBASTIAN}
+   K{\fontsize{18.7}{26}\selectfont OCH}}\\[2pt]
+  {\headerserif\itshape\fontsize{11}{13.2}\selectfont Research Scientist at Google}
+\end{center}
+\vspace{-7.7pt}
+\noindent
+\makebox[0.3333\textwidth][c]{\headerserif\fontsize{11}{13.2}\selectfont
+  \raisebox{-1pt}{\faEnvelope}\kern0.55em
+  \href{mailto:koch.sebastian@mail.com}{koch.sebastian@mail.com}}%
+\makebox[0.3333\textwidth][c]{%
+  \raisebox{-1pt}{\faGlobe}\kern0.4em
+  {\urlfont\fontsize{10.5}{12.6}\selectfont
+   \href{https://kochsebastian.com}{https://kochsebastian.com}}}%
+\makebox[0.3333\textwidth][c]{\headerserif\fontsize{11}{13.2}\selectfont
+  \raisebox{-1.5pt}{\faAddressCard}\kern0.55em Munich, Germany}
+\par\vspace{2.9pt}
+\hrule height 0.75pt
+
+% ============================================================= education ====
+\cvsection[15pt]{Education}
+
+\begin{cvtable}{0.831in}
+Apr 2022 --\par Dec 2026* &
+  \textbf{Ulm University, Germany}\par
+  PhD in Computer Science\par
+  \bitem{\textit{Advisor}: \href{https://viscom.uni-ulm.de/members/timo-ropinski/}{Prof.\ Timo Ropinski}}
+  \bitem{\textit{Thesis}: Language-Grounded Representations for Compositional 3D Scene Understanding}
+  \bitem{\textit{Apr 2022 -- Apr 2025}: Bosch Research Doctoral Program}
+  \bitem{\textit{May 2025 -- Nov 2025}: Google Student Researcher}
+  \bitem{\textit{Mar 2026 -- Jul 2026}: Google Research Intern}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+2020 -- 2022 &
+  \textbf{Tübingen University, Germany}\par
+  Master of Science in Computer Science\par
+  \bitem{\textit{Advisors}: Prof.\ \href{https://alr.anthropomatik.kit.edu/21_65.php}{Gerhard Neumann} \& \href{https://www.cvlibs.net/}{Prof.\ Andreas Geiger}}
+  \bitem{\textit{Thesis project}: Multi-View RGB-D Fusion for 6D Pose Estimation}
+  \bitem{\textit{GPA}: 1.4 (Scale: 1.0 [best] to 5.0 [fail])}
+  \bitem{\textit{Selected courses}: Computer Vision, Deep Learning, 3D Computer Vision, Mobile Robotics, Reinforcement Learning, Mathematics for Machine Learning}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+2016 -- 2020 &
+  \textbf{Baden-Württemberg Cooperative State University (DHBW), Germany}\par
+  Bachelor of Engineering in Computer Science\par
+  \bitem{\textit{Thesis project}: Improvement of the robustness of a SLAM system using Object Semantics}
+  \bitem{\textit{GPA}: 1.8 (Scale: 1.0 [best] to 5.0 [fail])}\\
+\end{cvtable}
+
+% ============================================================ experience ====
+\cvsection[10.2pt]{Experience}
+
+\begin{cvtable}{0.831in}
+\company{Google, Munich Germany}
+Jul 2026 --\par Present &
+  Research Scientist -- Immersive \& Spatial AI\par
+  \bitemj{\textit{Role}: Research on approaches for Spatial and Immersive AI for Android XR, including Gemini, 3D Scene Graphs, Vision Foundation Models and more.}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+\company{Google Research, Zurich Switzerland}
+Mar 2026 --\par Jul 2026 &
+  Research Intern -- 3D Scene Reconstruction and Generation for Android XR\par
+  \bitem{\textit{Advisors}: \href{https://scholar.google.com/citations?user=eQ0om98AAAAJ&hl=en}{Marie-Julie Rakotosaona} \& \href{https://federicotombari.github.io/}{Federico Tombari}}
+  \bitemj{\textit{Role}: Research on the joint benefits of 3D reconstruction and world models with 3D Gaussian Splatting and video generation models.}\\ \noalign{\vskip 5.8pt}
+\company{Google Research, Munich Germany}
+May 2025 -- Nov 2025 &
+  Student Researcher -- 3D Scene Understanding for AR/VR Applications\par
+  \bitem{\textit{Advisors}: \href{https://scholar.google.de/citations?user=dfjN3YAAAAAJ&hl=en}{Johanna Wald} \& \href{https://federicotombari.github.io/}{Federico Tombari}}
+  \bitemj{\textit{Role}: Research on open-vocabulary 3D scene understanding using forward models, investigating object semantics, affordances \& articulations [1]. Built up a forward model implementation that is used internally across multiple research projects.}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+\company{Bosch Center for Artificial Intelligence Stuttgart Germany}
+Apr 2022 -- Apr 2025 &
+  Bosch Research Doctoral Program -- 3D Scene Understanding for indoor Robotic Applications\par
+  \bitem{\textit{Advisors}: \href{https://scholar.google.com/citations?user=k4m1c6EAAAAJ&hl=en&oi=ao}{Mirco Colosi} \& \href{https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en}{Narunas Vaskevicius}}
+  \bitemj{\textit{Role}: Research and development on 3D Scene Graphs for indoor 3D scene understanding, achieving over 50\% reduction in labeled sample requirements through self-supervised learning, and introducing open-vocabulary relationship predictions for fine-grained inter-object reasoning. This work resulted in four first-author publications [3], [5], [6], [7].}\\ \noalign{\vskip 2.4pt}
+Oct 2021 -- Mar 2022 &
+  Industrial Master Thesis -- 6D Pose Estimation\par
+  \bitem{\textit{Advisor}: \href{https://scholar.google.com/citations?user=efxPCRAAAAAJ&hl=en&oi=ao}{Fabian Duffhauss}}\\
+ &
+  \bitemcont{\textit{Role}: Developed a multi-view RGB-D fusion method with a symmetry-aware keypoint voting approach, improving 6D Pose Estimation accuracy by 7.6\% and achieving state-of-the-art results, resulting in a publication [8].}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+\company{University of Tübingen, Tübingen Germany}
+Sep 2020 -- Oct 2021 &
+  Research Assistant -- Real-time high-resolution remote sensing\par
+  \bitem{\textit{Advisors}: \href{https://scholar.google.com/citations?hl=en&user=4XOjpZ8AAAAJ&view_op=list_works}{Leon-Amadeus Varga} \& \href{https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/prof-dr-andreas-zell/}{Prof.\ Andreas Zell}}
+  \bitemj{\textit{Role}: Research on encoder-only region proposal techniques combined with hardware-optimized TensorRT and CUDA implementations on embedded GPUs for real-time object detection in high-resolution images. Studied the impact of on-device image pre-processing for enhanced remote sensing object detection accuracy, resulting in a publication [9].}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+\company{Bosch Research, Stuttgart Germany}
+Apr 2020 -- Oct 2020 &
+  Research Intern -- Object-level Semantics for SLAM\par
+  \bitem{\textit{Advisor}: \href{https://www.linkedin.com/in/stefan-benz-95940b154/?originalSubdomain=de}{Stefan Benz}}
+  \bitemj{\textit{Role}: Integrated an object detection pipeline into a ROS system for enhanced localization and mapping. Led synthetic data generation using Unreal Engine to enable reproducible mapping runs used in the evaluation section of a published paper.}\\
+\end{cvtable}
+
+\begin{cvtable}{0.831in}
+\company{Bosch Group, Stuttgart Germany}
+Oct 2016 -- Mar 2020 &
+  Industrial Bachelor Student\par
+  \bitemj{\textit{Role}: Alongside my bachelor's in computer science at the university, I worked on scientific projects in different departments at Bosch, applying learned knowledge and collaborating with experienced developers and researchers.}
+  \bitem{\textit{Mentors}: Stefan Benz, Hanna Ziesche, Christopher Baker, Stephan Stühmer}
+  \bitems{\textit{Nov 2017 -- Feb 2018}: Analyzed false-positive ultrasonic reflections in automotive sensors.}
+  \bitems{\textit{Jun 2018 -- Sep 2018}: Implemented a play-back recording feature for ECU failure analysis.}
+  \bitems{\textit{Jun 2019 -- Sep 2019}: Implemented a pedestrian simulator for ML-based human behavior prediction.}
+  \bitems{\textit{Sep 2019 -- Mar 2020}: Researched the impact of semantic features for improved SLAM accuracy.}\\
+\end{cvtable}
+
+% ======================================================== honors & awards ===
+\setlength{\entrygap}{3.6pt}% compact sections use tighter gaps
+\cvsection[12.2pt]{Honors \& Awards}
+
+\begin{cvtable}[\compactsize]{0.421in}
+2024 & Accepted into International Computer Vision Summer School (ICVSS) 2024 for excellent PhDs in CV.\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.421in}
+2021 & 1st place in the AI Chess Competition conducted by the Cognitive Systems Lab of Prof.\ Andreas Zell.\par
+       3rd place in the RL Hockey Competition of the MPI Autonomous Learning Group of Prof.\ Georg Martius.\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.421in}
+2020 & Accepted into the Students@Bosch program for students who excelled at Bosch internships.\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.421in}
+2014 & 4th place at the RoboCup World Cup 2014 in Joao Pessoa Brazil in the Rescue Junior competition\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.421in}
+2013 & German Champion at the RoboCup German Open 2013 in the Rescue Junior competition.\par
+       World Champion at the RoboCup World Cup 2013 in Eindhoven in the Rescue Junior competition.\\
+\end{cvtable}
+
+% ========================================================== publications ====
+\cvsection[10.6pt]{Publications}
+\vspace{-4pt}
+{\fontsize{8}{9.6}\selectfont For a complete list of all publications, including recent pre-preprints see: \textit{\href{http://kochsebastian.com/publications}{kochsebastian.com/publications}}\par}
+\vspace{4.4pt}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2026 &
+  \pubitem{[1] \textbf{S Koch}, J Wald, H Matsuki, P Hermosilla, T Ropinski, F Tombari, \textit{``Unified Semantic Transformer for\newline 3D Scene Understanding'',} in Transactions on Machine Learning Research (\textbf{TMLR}), 2026.}\\ \noalign{\vskip 2.6pt}
+2025 &
+  \pubitem{[2] L Weijler, \textbf{S Koch}, F Poiesi, T Ropinski, P Hermosilla, \textit{``OpenHype: Hyperbolic Embeddings for Hierarchical Open-Vocabulary Radiance Fields'',} in Advances in Neural Information Processing Systems (\textbf{NeurIPS}), 2025.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[3] \textbf{S Koch}, J Wald, M Colosi, N Vaskevicius, P Hermosilla, F Tombari, T Ropinski, \textit{``RelationField: Relate Anything in Radiance Fields'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}),\newline 2025.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[4] Y Liu, L Palmieri, \textbf{S Koch}, I Georgievski, M Aiello, \textit{``DELTA: Decomposed Efficient Long-Term Robot Task Planning using Large Language Models''}, in IEEE International Conference on Robotics and Automation \textbf{(ICRA)}, 2025.}\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2024 &
+  \pubitem{[5] \textbf{S Koch}, N Vaskevicius, M Colosi, P Hermosilla, T Ropinski, \textit{``Open3DSG: Open-vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}), 2024.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[6] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``Lang3DSG: Language-based contrastive pre-training for 3D Scene Graph prediction''}, in International Conference on 3D Vision (\textbf{3DV}), 2024.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[7] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction'',} in Winter Conference on Applications of Computer Vision (\textbf{WACV}), 2024.}\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2023 &
+  \pubitem{[8] F Duffhauss, \textbf{S Koch}, H Ziesche, NA Vien, G Neumann, \textit{``SyMFM6D: Symmetry-aware Multi-directional Fusion for Multi-View 6D Object Pose Estimation'',} in Robotics and Automation Letters (\textbf{RA-L}), 2023.}\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2022 &
+  \pubitem{[9] LA Varga, \textbf{S Koch}, A Zell, \textit{``Comprehensive Analysis of the Object Detection Pipeline on UAVs''}, in \textbf{Remote Sensing}, 2022.}\\
+\end{cvtable}
+
+% ========================================================= invited talks ====
+\cvsection[10.4pt]{Invited Talks}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2025 &
+  \textbf{Google Research:} \textit{Open-Vocabulary Relationship Reasoning in 3D}, Munich 05.05.2025.\par
+  \vspace{3.5pt}
+  \textbf{Huawai Munich Research Center}: \textit{Language-driven Scene Understanding with 3D Scene Graphs},\newline Munich 06.02.2025.\\
+\end{cvtable}
+
+\begin{cvtable}[\compactsize]{0.441in}
+2024 &
+  \textbf{RWTH Aachen.\ Computer Vision Group, Prof.\ Bastian Leibe}: \textit{3D Scene Understanding with label-efficient and open-vocabulary 3D Scene Graphs}, Remote 27.02.2024.\par
+  \vspace{3.5pt}
+  \textbf{Bosch Research US, Sunnyvale.} \textit{3D Scene Understanding with label-efficient and open-vocabulary 3D Scene Graphs}, Remote 07.02.2024.\\
+\end{cvtable}
+
+% =============================================================== service ====
+\cvsection[9pt]{Service}
+
+\begingroup\fontsize{10.5}{13.6}\selectfont
+{\hangindent=1.24in \hangafter=1 \noindent
+\textbf{Reviewing}: \underline{Conferences}: CVPR 2024--2026, ICCV 2023--2025, ECCV 2026, NeurIPS 2024--2025, ICML 2026, ICRA 2025, ROS 2024--2025 --- \underline{Journals}: RA-L 2024--2026\newline \underline{Recognition}: Outstanding Reviewer: CVPR 2025, CVPR 2026\par}
+\textbf{Volunteering}: I work as a volunteer and referee at RoboCup Junior events on a national and international level.\par
+\endgroup
+
+% ======================================================== qualifications ====
+\cvsection[14.5pt]{Qualifications}
+
+\begingroup\fontsize{10.5}{13.6}\selectfont
+\textbf{Programming}: Python, C/C++, MATLAB, Bash\par
+\textbf{Libraries}: PyTorch, JAX, NumPy, Lightning, FLAX, Matplotlib, Open3D, OpenCV, TensorRT\par
+\textbf{Software}: Git, \LaTeX, ROS, GNU/Linux, Blender, Office\par
+\textbf{Languages:} German (native), English (fluent)\par
+\endgroup
+
+% ============================================================ references ====
+\cvsection[13pt]{References}
+\vspace{3pt}
+
+\newcommand{\reference}[3]{\noindent\textbf{#1.} #2\hfill\href{mailto:#3}{#3}\par}
+\begingroup\fontsize{10.5}{13.6}\selectfont
+\reference{Prof.\ Timo Ropinski}{Full Professor, Ulm University.}{timo.ropinski@uni-ulm.de}
+\reference{Dr.\ Federico Tombari}{Director of Research, Google Zurich.}{tombari@google.com}
+\reference{Prof.\ Pedro Hermosilla}{Assistant Professor, TU Wien.}{phermosilla@cvl.tuwien.ac.at}
+\reference{Dr.\ Narunas Vaskevicius}{Lead Research Scientist, Bosch Research.}{narunas.vaskevicius@bosch.com}
+\reference{Prof.\ Gerard Pons-Moll}{Full Professor, University of Tuebingen.}{gerard.pons-moll@uni-tuebingen.de}
+\endgroup
+
+\end{document}
