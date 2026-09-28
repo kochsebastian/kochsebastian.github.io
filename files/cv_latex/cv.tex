@@ -93,7 +93,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyfoot[R]{\color{footgray}\fontsize{9}{10.8}\selectfont Updated July 2026}
+\fancyfoot[R]{\color{footgray}\fontsize{9}{10.8}\selectfont Updated September 2026}
 
 \hyphenpenalty=10000 % no auto-hyphenation (Word); breaks at explicit hyphens stay allowed
 \setlength{\parindent}{0pt}
@@ -175,7 +175,7 @@ Mar 2026 --\par Jul 2026 &
 May 2025 -- Nov 2025 &
   Student Researcher -- 3D Scene Understanding for AR/VR Applications\par
   \bitem{\textit{Advisors}: \href{https://scholar.google.de/citations?user=dfjN3YAAAAAJ&hl=en}{Johanna Wald} \& \href{https://federicotombari.github.io/}{Federico Tombari}}
-  \bitemj{\textit{Role}: Research on open-vocabulary 3D scene understanding using forward models, investigating object semantics, affordances \& articulations [1]. Built up a forward model implementation that is used internally across multiple research projects.}\\
+  \bitemj{\textit{Role}: Research on open-vocabulary 3D scene understanding using forward models, investigating object semantics, affordances \& articulations [3]. Built up a forward model implementation that is used internally across multiple research projects.}\\
 \end{cvtable}
 
 \begin{cvtable}{0.831in}
@@ -183,12 +183,12 @@ May 2025 -- Nov 2025 &
 Apr 2022 -- Apr 2025 &
   Bosch Research Doctoral Program -- 3D Scene Understanding for indoor Robotic Applications\par
   \bitem{\textit{Advisors}: \href{https://scholar.google.com/citations?user=k4m1c6EAAAAJ&hl=en&oi=ao}{Mirco Colosi} \& \href{https://scholar.google.com/citations?user=U3KSTwkAAAAJ&hl=en}{Narunas Vaskevicius}}
-  \bitemj{\textit{Role}: Research and development on 3D Scene Graphs for indoor 3D scene understanding, achieving over 50\% reduction in labeled sample requirements through self-supervised learning, and introducing open-vocabulary relationship predictions for fine-grained inter-object reasoning. This work resulted in four first-author publications [3], [5], [6], [7].}\\ \noalign{\vskip 2.4pt}
+  \bitemj{\textit{Role}: Research and development on 3D Scene Graphs for indoor 3D scene understanding, achieving over 50\% reduction in labeled sample requirements through self-supervised learning, and introducing open-vocabulary relationship predictions for fine-grained inter-object reasoning. This work resulted in four first-author publications [5], [7], [8], [9].}\\ \noalign{\vskip 2.4pt}
 Oct 2021 -- Mar 2022 &
   Industrial Master Thesis -- 6D Pose Estimation\par
   \bitem{\textit{Advisor}: \href{https://scholar.google.com/citations?user=efxPCRAAAAAJ&hl=en&oi=ao}{Fabian Duffhauss}}\\
  &
-  \bitemcont{\textit{Role}: Developed a multi-view RGB-D fusion method with a symmetry-aware keypoint voting approach, improving 6D Pose Estimation accuracy by 7.6\% and achieving state-of-the-art results, resulting in a publication [8].}\\
+  \bitemcont{\textit{Role}: Developed a multi-view RGB-D fusion method with a symmetry-aware keypoint voting approach, improving 6D Pose Estimation accuracy by 7.6\% and achieving state-of-the-art results, resulting in a publication [10].}\\
 \end{cvtable}
 
 \begin{cvtable}{0.831in}
@@ -196,7 +196,7 @@ Oct 2021 -- Mar 2022 &
 Sep 2020 -- Oct 2021 &
   Research Assistant -- Real-time high-resolution remote sensing\par
   \bitem{\textit{Advisors}: \href{https://scholar.google.com/citations?hl=en&user=4XOjpZ8AAAAJ&view_op=list_works}{Leon-Amadeus Varga} \& \href{https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/kognitive-systeme/the-chair/staff/prof-dr-andreas-zell/}{Prof.\ Andreas Zell}}
-  \bitemj{\textit{Role}: Research on encoder-only region proposal techniques combined with hardware-optimized TensorRT and CUDA implementations on embedded GPUs for real-time object detection in high-resolution images. Studied the impact of on-device image pre-processing for enhanced remote sensing object detection accuracy, resulting in a publication [9].}\\
+  \bitemj{\textit{Role}: Research on encoder-only region proposal techniques combined with hardware-optimized TensorRT and CUDA implementations on embedded GPUs for real-time object detection in high-resolution images. Studied the impact of on-device image pre-processing for enhanced remote sensing object detection accuracy, resulting in a publication [11].}\\
 \end{cvtable}
 
 \begin{cvtable}{0.831in}
@@ -246,6 +246,7 @@ Oct 2016 -- Mar 2020 &
 \end{cvtable}
 
 % ========================================================== publications ====
+\setlength{\entrygap}{1.5pt}% fit the additional publications within three pages
 \cvsection[10.6pt]{Publications}
 \vspace{-4pt}
 {\fontsize{8}{9.6}\selectfont For a complete list of all publications, including recent pre-preprints see: \textit{\href{http://kochsebastian.com/publications}{kochsebastian.com/publications}}\par}
@@ -253,35 +254,40 @@ Oct 2016 -- Mar 2020 &
 
 \begin{cvtable}[\compactsize]{0.441in}
 2026 &
-  \pubitem{[1] \textbf{S Koch}, J Wald, H Matsuki, P Hermosilla, T Ropinski, F Tombari, \textit{``Unified Semantic Transformer for\newline 3D Scene Understanding'',} in Transactions on Machine Learning Research (\textbf{TMLR}), 2026.}\\ \noalign{\vskip 2.6pt}
+  \pubitem{[1] L Milivojevic, N Popovic, S Deb Sarkar, \textbf{S Koch}, I Armeni, L Van Gool, DP Paudel, \textit{\href{https://graphwrit3r.insait.ai/}{``GraphWrit3R: End-to-End 3D Scene Graph Writing''},} in Advances in Neural Information Processing Systems (\textbf{NeurIPS}), 2026.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[2] D Rotondi, F Argenziano, \textbf{S Koch}, N Hughes, M Büchner, et al., \textit{\href{https://arxiv.org/abs/2606.19383}{``3D Scene Graphs: Open Challenges and Future Directions''},} arXiv preprint arXiv:2606.19383, 2026.}\\ \noalign{\vskip 2.6pt}
+ &
+  \pubitem{[3] \textbf{S Koch}, J Wald, H Matsuki, P Hermosilla, T Ropinski, F Tombari, \textit{``Unified Semantic Transformer for\newline 3D Scene Understanding'',} in Transactions on Machine Learning Research (\textbf{TMLR}), 2026.}\\ \noalign{\vskip 2.6pt}
 2025 &
-  \pubitem{[2] L Weijler, \textbf{S Koch}, F Poiesi, T Ropinski, P Hermosilla, \textit{``OpenHype: Hyperbolic Embeddings for Hierarchical Open-Vocabulary Radiance Fields'',} in Advances in Neural Information Processing Systems (\textbf{NeurIPS}), 2025.}\\ \noalign{\vskip 2.6pt}
+  \pubitem{[4] L Weijler, \textbf{S Koch}, F Poiesi, T Ropinski, P Hermosilla, \textit{``OpenHype: Hyperbolic Embeddings for Hierarchical Open-Vocabulary Radiance Fields'',} in Advances in Neural Information Processing Systems (\textbf{NeurIPS}), 2025.}\\ \noalign{\vskip 2.6pt}
  &
-  \pubitem{[3] \textbf{S Koch}, J Wald, M Colosi, N Vaskevicius, P Hermosilla, F Tombari, T Ropinski, \textit{``RelationField: Relate Anything in Radiance Fields'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}),\newline 2025.}\\ \noalign{\vskip 2.6pt}
+  \pubitem{[5] \textbf{S Koch}, J Wald, M Colosi, N Vaskevicius, P Hermosilla, F Tombari, T Ropinski, \textit{``RelationField: Relate Anything in Radiance Fields'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}), 2025.}\\ \noalign{\vskip 2.6pt}
  &
-  \pubitem{[4] Y Liu, L Palmieri, \textbf{S Koch}, I Georgievski, M Aiello, \textit{``DELTA: Decomposed Efficient Long-Term Robot Task Planning using Large Language Models''}, in IEEE International Conference on Robotics and Automation \textbf{(ICRA)}, 2025.}\\
+  \pubitem{[6] Y Liu, L Palmieri, \textbf{S Koch}, I Georgievski, M Aiello, \textit{``DELTA: Decomposed Efficient Long-Term Robot Task Planning using Large Language Models''}, in IEEE International Conference on Robotics and Automation \textbf{(ICRA)}, 2025.}\\
 \end{cvtable}
 
 \begin{cvtable}[\compactsize]{0.441in}
 2024 &
-  \pubitem{[5] \textbf{S Koch}, N Vaskevicius, M Colosi, P Hermosilla, T Ropinski, \textit{``Open3DSG: Open-vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}), 2024.}\\ \noalign{\vskip 2.6pt}
+  \pubitem{[7] \textbf{S Koch}, N Vaskevicius, M Colosi, P Hermosilla, T Ropinski, \textit{``Open3DSG: Open-vocabulary 3D Scene Graphs from Point Clouds with Queryable Objects and Open-Set Relationships'',} in Conference on Computer Vision and Pattern Recognition (\textbf{CVPR}), 2024.}\\ \noalign{\vskip 2.6pt}
  &
-  \pubitem{[6] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``Lang3DSG: Language-based contrastive pre-training for 3D Scene Graph prediction''}, in International Conference on 3D Vision (\textbf{3DV}), 2024.}\\ \noalign{\vskip 2.6pt}
+  \pubitem{[8] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``Lang3DSG: Language-based contrastive pre-training for 3D Scene Graph prediction''}, in International Conference on 3D Vision (\textbf{3DV}), 2024.}\\ \noalign{\vskip 2.6pt}
  &
-  \pubitem{[7] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction'',} in Winter Conference on Applications of Computer Vision (\textbf{WACV}), 2024.}\\
+  \pubitem{[9] \textbf{S Koch}, P Hermosilla, N Vaskevicius, M Colosi, T Ropinski, \textit{``SGRec3D: Self-Supervised 3D Scene Graph Learning via Object-Level Scene Reconstruction'',} in Winter Conference on Applications of Computer Vision (\textbf{WACV}), 2024.}\\
 \end{cvtable}
 
 \begin{cvtable}[\compactsize]{0.441in}
 2023 &
-  \pubitem{[8] F Duffhauss, \textbf{S Koch}, H Ziesche, NA Vien, G Neumann, \textit{``SyMFM6D: Symmetry-aware Multi-directional Fusion for Multi-View 6D Object Pose Estimation'',} in Robotics and Automation Letters (\textbf{RA-L}), 2023.}\\
+  \pubitem{[10] F Duffhauss, \textbf{S Koch}, H Ziesche, NA Vien, G Neumann, \textit{``SyMFM6D: Symmetry-aware Multi-directional Fusion for Multi-View 6D Object Pose Estimation'',} in Robotics and Automation Letters (\textbf{RA-L}), 2023.}\\
 \end{cvtable}
 
 \begin{cvtable}[\compactsize]{0.441in}
 2022 &
-  \pubitem{[9] LA Varga, \textbf{S Koch}, A Zell, \textit{``Comprehensive Analysis of the Object Detection Pipeline on UAVs''}, in \textbf{Remote Sensing}, 2022.}\\
+  \pubitem{[11] LA Varga, \textbf{S Koch}, A Zell, \textit{``Comprehensive Analysis of the Object Detection Pipeline on UAVs''}, in \textbf{Remote Sensing}, 2022.}\\
 \end{cvtable}
 
 % ========================================================= invited talks ====
+\setlength{\entrygap}{3.6pt}
 \cvsection[10.4pt]{Invited Talks}
 
 \begin{cvtable}[\compactsize]{0.441in}
@@ -302,13 +308,15 @@ Oct 2016 -- Mar 2020 &
 \cvsection[9pt]{Service}
 
 \begingroup\fontsize{10.5}{13.6}\selectfont
-{\hangindent=1.24in \hangafter=1 \noindent
-\textbf{Reviewing}: \underline{Conferences}: CVPR 2024--2026, ICCV 2023--2025, ECCV 2026, NeurIPS 2024--2025, ICML 2026, ICRA 2025, ROS 2024--2025 --- \underline{Journals}: RA-L 2024--2026\newline \underline{Recognition}: Outstanding Reviewer: CVPR 2025, CVPR 2026\par}
+\settowidth{\hangindent}{\textbf{Reviewing}: }
+\hangafter=1
+\noindent
+\textbf{Reviewing}: \underline{Conferences}: CVPR 2024--2026, ICCV 2023--2025, ECCV 2026, NeurIPS 2024--2025, ICML 2026, ICRA 2025, ROS 2024--2025 --- \underline{Journals}: RA-L 2024--2026 --- \underline{Recognition}: Outstanding Reviewer: CVPR 2025, CVPR 2026, ECCV 2026\par
 \textbf{Volunteering}: I work as a volunteer and referee at RoboCup Junior events on a national and international level.\par
 \endgroup
 
 % ======================================================== qualifications ====
-\cvsection[14.5pt]{Qualifications}
+\cvsection[10pt]{Qualifications}
 
 \begingroup\fontsize{10.5}{13.6}\selectfont
 \textbf{Programming}: Python, C/C++, MATLAB, Bash\par
@@ -318,7 +326,7 @@ Oct 2016 -- Mar 2020 &
 \endgroup
 
 % ============================================================ references ====
-\cvsection[13pt]{References}
+\cvsection[9pt]{References}
 \vspace{3pt}
 
 \newcommand{\reference}[3]{\noindent\textbf{#1.} #2\hfill\href{mailto:#3}{#3}\par}
